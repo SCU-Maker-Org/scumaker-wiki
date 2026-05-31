@@ -1,0 +1,5 @@
+:4173 {
+    root * /srv
+    file_server
+    encode gzip
+}
