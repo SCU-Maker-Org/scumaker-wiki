@@ -35,7 +35,7 @@ python3 tools/build_handbook_wiki.py --check-external
 - 新页面需要有明确标题和实质内容，空页面直接删除。
 - `SCU 自学手册` 已作为历史参考保留，不放在协会 Wiki 主入口。
 - 公开部署前检查历史附件、软件安装包、内部域名和旧链接。
-
+ 非常感谢SCU 自学指南的'https://github.com/SCU-CS-Runner'
 ## GitHub Pages
 
 仓库自带 `.github/workflows/deploy-pages.yml`。推送到 `main` 或 `master` 后，GitHub Actions 会重新生成 `docs-site/` 并发布到 Pages。
