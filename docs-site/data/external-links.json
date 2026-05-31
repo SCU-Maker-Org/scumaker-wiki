@@ -1,0 +1,338 @@
+[
+  {
+    "url": "http://127.0.0.1:4173/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "http://openwrt.org",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://acwing.com/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://archive.openwrt.org/chaos_calmer/15.05.1/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://atcoder.jp/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://codeforces.com/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://conanhujinming.github.io/comments-for-awesome-courses/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://cs.scu.edu.cn/e_jsjxy/Research/Research_Center.htm",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://csdiy.wiki/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://csrankings.org/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://csrankings.org/#/index?arch&comm&sec&mod&hpc&mobile&metrics&ops&plan&soft&da&bed&world",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://d2l.ai/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://github.com/conanhujinming/tips_for_interview/blob/master/README-zh_CN.md",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://github.com/izackwu/TeachYourselfCS-CN",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://github.com/openwrt/openwrt",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://github.com/openwrt/openwrt.git",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://github.com/ossu/computer-science-cn",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://lastminuteengineers.com/pir-sensor-arduino-tutorial/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://luogu.com.cn/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://mermaid.js.org/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://mitxonline.mit.edu/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://mypage.cuhk.edu.cn/academics/wangzizhuo/ORFAQ.html",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://ocw.mit.edu/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://ocw.mit.edu/search/?d=Electrical%20Engineering%20and%20Computer%20Science",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://openlearning.mit.edu/courses-programs/open-learning-library",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://orc.mit.edu/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://riis.sufe.edu.cn/jxChinese/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://rphilipzhang.github.io/rphilipzhang/OM-PhD-Application.pdf",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://sds.cuhk.edu.cn/en/teacher",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://survivesjtu.gitbook.io/survivesjtumanual/",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://survivesjtu.gitbook.io/survivesjtumanual/fu-lu/ben-ke-sheng-zhuan-ye-jie-shao-todo/cs-zi-jiu-zhi-bei",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://talent.alibaba.com/campus/position-list?campusType=talentPlan",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.bilibili.com/video/BV137411Z7LR",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.bilibili.com/video/BV1CU4y1P7PE",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.bilibili.com/video/BV1Cm4y1d7Ur",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.bilibili.com/video/BV1Cp4y1C7dv",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.bilibili.com/video/BV1Ms411A7EP",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.bilibili.com/video/BV1b7411K7P4",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.cnblogs.com/cauwj/p/17073777.html",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.cnblogs.com/cauwj/p/17074545.html",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.ieltscb.com/paper/list?cid=",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.mpja.com/download/31227sc.pdf",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://www.zhihu.com/people/yuck-77/answers/by_votes",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://ysyx.oscc.cc/project/intro.html",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  },
+  {
+    "url": "https://zhuanlan.zhihu.com/p/128037373",
+    "status": "unchecked",
+    "code": "",
+    "checked": "no",
+    "note": "本次构建未启用 --check-external"
+  }
+]

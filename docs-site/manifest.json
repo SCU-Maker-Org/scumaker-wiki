@@ -1,0 +1,1280 @@
+{
+  "title": "SCU Maker 文档资料 Wiki",
+  "generatedAt": "2026-05-31T16:08:14",
+  "sourceRoot": "projects/docs-and-handbooks",
+  "stats": {
+    "pages": 41,
+    "sourceMarkdown": 32,
+    "generatedPages": 9,
+    "resources": 55,
+    "publishedResources": 55,
+    "externalLinks": 48,
+    "brokenExternalLinks": 0
+  },
+  "pages": [
+    {
+      "path": "00-wiki/README.md",
+      "title": "SCU Maker 文档资料 Wiki",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "这个站点整理 SCU Maker 协会的介绍、学习路线、技术教程、藏书和资料附件。SCU 自学手册 与协会主体关联较弱，已降级为历史参考。",
+      "headings": [
+        "SCU Maker 文档资料 Wiki",
+        "新人入口",
+        "协会资料",
+        "归档与维护",
+        "页面规模",
+        "资源规模",
+        "链接状态",
+        "公开部署提醒"
+      ],
+      "source": "generated",
+      "lines": 51,
+      "bytes": 1571,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/external-links.md",
+      "title": "外部链接检测报告",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "构建时会把明显过期或错误格式的外链替换为较新的入口；联网检测结果如下。内部协会域名和私有地址不会按公网坏链处理。",
+      "headings": [
+        "外部链接检测报告"
+      ],
+      "source": "generated",
+      "lines": 54,
+      "bytes": 5456,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/missing-links.md",
+      "title": "本地链接报告",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "构建时会重写可解析的本地 Markdown、图片和附件链接。下列问题需要人工判断或原资料缺失。",
+      "headings": [
+        "本地链接报告",
+        "已自动修正的链接",
+        "未解析本地链接"
+      ],
+      "source": "generated",
+      "lines": 26,
+      "bytes": 4373,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/resources.md",
+      "title": "资源总库",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "这里把 projects/docs-and-handbooks 中散落的 PDF、PPT、DOCX、安装包、配置模板和图片素材统一归类。Markdown 正文仍保留原有内容；资源总库负责补上“文件在哪里、怎么打开”的入口。",
+      "headings": [
+        "资源总库"
+      ],
+      "source": "generated",
+      "lines": 10,
+      "bytes": 766,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/wiki-map.md",
+      "title": "站点地图",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "按主题组织的 Wiki 入口。",
+      "headings": [
+        "站点地图",
+        "协会知识库",
+        "协会介绍与技术教程",
+        "新人学习路线",
+        "图书资料",
+        "历史参考",
+        "SCU 自学手册归档"
+      ],
+      "source": "generated",
+      "lines": 50,
+      "bytes": 2947,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/resources/device-manuals.md",
+      "title": "设备与仪器手册",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "设备与仪器手册",
+      "headings": [
+        "设备与仪器手册"
+      ],
+      "source": "generated",
+      "lines": 11,
+      "bytes": 2086,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/resources/hardware-tools.md",
+      "title": "硬件工具资料",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "硬件工具资料",
+      "headings": [
+        "硬件工具资料"
+      ],
+      "source": "generated",
+      "lines": 20,
+      "bytes": 5609,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/resources/images.md",
+      "title": "站内插图与图片素材",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "站内插图与图片素材",
+      "headings": [
+        "站内插图与图片素材"
+      ],
+      "source": "generated",
+      "lines": 24,
+      "bytes": 4294,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "00-wiki/resources/software-tools.md",
+      "title": "软件工具包",
+      "section": "站点总览",
+      "collection": "生成索引",
+      "excerpt": "软件工具包",
+      "headings": [
+        "软件工具包"
+      ],
+      "source": "generated",
+      "lines": 16,
+      "bytes": 3190,
+      "empty": false,
+      "generated": true
+    },
+    {
+      "path": "awesome_handbook/2020协会招新公告.md",
+      "title": "2020协会招新公告",
+      "section": "协会知识库",
+      "collection": "协会介绍与技术教程",
+      "excerpt": "我们是一群创客，自主创新，动手实践。软件编程、硬件电路都玩得转！",
+      "headings": [],
+      "source": "projects/docs-and-handbooks/awesome_handbook/2020协会招新公告.md",
+      "lines": 41,
+      "bytes": 1833,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "awesome_handbook/协会整体介绍.md",
+      "title": "SCU Maker 协会介绍",
+      "section": "协会知识库",
+      "collection": "协会介绍与技术教程",
+      "excerpt": "开源硬件协会是四川大学计算机学院领导下的学术性社团之一，成立于2015年。",
+      "headings": [
+        "SCU Maker 协会介绍",
+        "什么是开源硬件与创客",
+        "协会建设与项目",
+        "活动与学习氛围"
+      ],
+      "source": "projects/docs-and-handbooks/awesome_handbook/协会整体介绍.md",
+      "lines": 29,
+      "bytes": 3095,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "awesome_handbook/software/openwrt交叉编译教程.md",
+      "title": "OpenWrt系统交叉编译教程",
+      "section": "协会知识库",
+      "collection": "协会介绍与技术教程",
+      "excerpt": "2017年3月30日23:00:15",
+      "headings": [
+        "0x00",
+        "0x01",
+        "0x03",
+        "0x04",
+        "参考文章"
+      ],
+      "source": "projects/docs-and-handbooks/awesome_handbook/software/openwrt交叉编译教程.md",
+      "lines": 153,
+      "bytes": 6774,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "awesome_handbook/software/树莓派的应用之HC-SR501模块.md",
+      "title": "树莓派的应用之HC-SR501红外探测模块",
+      "section": "协会知识库",
+      "collection": "协会介绍与技术教程",
+      "excerpt": "下面介绍人体感应模块 HC-SR501。",
+      "headings": [
+        "0x00",
+        "0x01",
+        "0x02",
+        "0x03",
+        "0x04",
+        "0x05"
+      ],
+      "source": "projects/docs-and-handbooks/awesome_handbook/software/树莓派的应用之HC-SR501模块.md",
+      "lines": 63,
+      "bytes": 4015,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "awesome_handbook/tools/wiki教程.md",
+      "title": "如何维护协会 Wiki",
+      "section": "协会知识库",
+      "collection": "协会介绍与技术教程",
+      "excerpt": "这篇文档替代旧 GitBook/Gogs 流程，用来说明现在这个静态 Wiki 应该怎么维护。",
+      "headings": [
+        "如何维护协会 Wiki",
+        "内容来源",
+        "添加或修改页面",
+        "重新生成站点",
+        "内容整理原则",
+        "Git 基本流程"
+      ],
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/wiki教程.md",
+      "lines": 59,
+      "bytes": 1771,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "learning_guide/README.md",
+      "title": "新人学习指南",
+      "section": "协会知识库",
+      "collection": "新人学习路线",
+      "excerpt": "当你看到这个仓库的时候，恭喜你成为SCU Maker协会内部的一员！",
+      "headings": [
+        "新人学习指南",
+        "前言",
+        "入门部分",
+        "语言部分",
+        "服务器部分"
+      ],
+      "source": "projects/docs-and-handbooks/learning_guide/README.md",
+      "lines": 55,
+      "bytes": 1875,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "learning_guide/introduction/README.md",
+      "title": "自学与搜索方法",
+      "section": "协会知识库",
+      "collection": "新人学习路线",
+      "excerpt": "大学的学习很大程度依靠自学，如何高效率的自学和搜索的技术分不开。",
+      "headings": [
+        "自学与搜索方法",
+        "搜索",
+        "浏览器和搜索引擎",
+        "搜索习惯",
+        "翻墙"
+      ],
+      "source": "projects/docs-and-handbooks/learning_guide/introduction/README.md",
+      "lines": 58,
+      "bytes": 4196,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "learning_guide/language/README.md",
+      "title": "编程语言入门",
+      "section": "协会知识库",
+      "collection": "新人学习路线",
+      "excerpt": "这三个一般是一起学习的，不要感觉三种语言学的很多，实际上静态页面html + css足矣，这两个要入门的话看几个小时的文档教程都已经差不多够用了，学起来很快",
+      "headings": [
+        "编程语言入门",
+        "前端语言",
+        "后端语言",
+        "编译器推荐"
+      ],
+      "source": "projects/docs-and-handbooks/learning_guide/language/README.md",
+      "lines": 57,
+      "bytes": 2332,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "learning_guide/server/README.md",
+      "title": "Linux 与服务器入门",
+      "section": "协会知识库",
+      "collection": "新人学习路线",
+      "excerpt": "我可以很明确的告诉你们如果你们只照着学校教的课程学习，大学四年学完应该都碰不到服务器，甚至不会连接登录",
+      "headings": [
+        "Linux 与服务器入门"
+      ],
+      "source": "projects/docs-and-handbooks/learning_guide/server/README.md",
+      "lines": 59,
+      "bytes": 2187,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "books/README.md",
+      "title": "SCU Maker Books",
+      "section": "协会知识库",
+      "collection": "图书资料",
+      "excerpt": "记录协会藏书，持续更新。",
+      "headings": [
+        "SCU Maker Books",
+        "语言类",
+        "硬件类",
+        "Linux",
+        "数据结构",
+        "计算机网络类",
+        "数据库类",
+        "AI类",
+        "算法类",
+        "操作系统类",
+        "数学模型、数据分析类",
+        "杂志类"
+      ],
+      "source": "projects/docs-and-handbooks/books/README.md",
+      "lines": 147,
+      "bytes": 3545,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/README.md",
+      "title": "SCU 自学手册归档",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "这部分是川大计软网学生自救、升学、就业和科研经验的历史资料，和 SCU Maker 协会 Wiki 的主体内容关联较弱，因此只作为扩展阅读保留。",
+      "headings": [
+        "SCU 自学手册归档",
+        "Ⅰ 序",
+        "Ⅱ 自救篇",
+        "Ⅲ 生存篇",
+        "Ⅳ 未来篇",
+        "Ⅴ 经验分享篇",
+        "Ⅵ 致谢"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/README.md",
+      "lines": 45,
+      "bytes": 1856,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/00-introduction/introduction.md",
+      "title": "序",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "长久以来，我作为这个学校里最普通的一员，一直在思考这样一个问题：究竟是什么，让中国绝大部分本科院校的计算机本科培养体系已经濒临崩溃。四川大学，作为一所典型的中/末流985院校，计算机科学的本科培养的质量，很遗憾，和他的几十个，上百个兄弟姐妹院校一样摇摇欲坠。",
+      "headings": [
+        "序"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/00-introduction/introduction.md",
+      "lines": 20,
+      "bytes": 2370,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/1-why-JRW.md",
+      "title": "为什么是计软网",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "人类已经经历了四次工业革命。第一次工业革命带来了蒸汽机，火车、汽车和轮船取代了马车和帆船，无论是陆路还是水陆，人类都能更快的到达远方；第二次工业革命带来了电力，电报取代了信件，相隔千里的人可以通过电报进行通信，不再需要等待信件缓慢送达；第三次工业革命带来了计算机，电话网络和互联网取代了电报，人类能够更加便捷、自由且低门槛地获取自己想要的信息；而现在正在...",
+      "headings": [
+        "为什么是计软网"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/1-why-JRW.md",
+      "lines": 15,
+      "bytes": 3251,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/11-cope-with-anxiety.md",
+      "title": "关于摆脱内卷和焦虑的一些浅见",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "首先，最最重要的，尊重每一种被主动选择的生活方式（涉及违法犯罪的生活方式不在讨论范围内）。无客观好坏，无客观高下，只要更加适合你的，你满意的，那就够了。",
+      "headings": [
+        "关于摆脱内卷和焦虑的一些浅见"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/11-cope-with-anxiety.md",
+      "lines": 23,
+      "bytes": 3962,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/12-improve-coding.md",
+      "title": "如何提高自己的代码/工程能力",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "代码能力是计算机学生必须具备的能力，但简单地说”代码能力“是不够的。项目需求、程序设计语言、开发框架多种多样，能力必须有针对性地培养。代码能力粗略地分为两类：写出（高效）解决单个问题的代码的能力，即算法能力，和写出整体高性能可维护”优雅“的代码的能力，即工程能力。这两者都可以继续分类，但一来篇幅有限，二来笔者也不能面面精通，就简单地这么分了。",
+      "headings": [
+        "如何提高自己的代码/工程能力",
+        "基础工具和能力",
+        "算法题",
+        "开发工具",
+        "学习开源代码",
+        "针对性学习",
+        "AI 科研方向",
+        "互联网技术",
+        "模块化",
+        "行动起来",
+        "培养读官方文档和源码的能力"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/12-improve-coding.md",
+      "lines": 92,
+      "bytes": 9970,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/14-transfer-major.md",
+      "title": "转计软网二三事",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "对于未来想从事计算机行业工作的人来说，科班身份就如绿卡对于想留在美国工作的人一样重要。笔者随便列举三点好处：（1）减少与计算机无关的课程带来的负担；（2）获得更多计软网圈内的人脉；（3）避免找工作/深造时的或隐性或显性的歧视。计软网成为最近几年的热门转入专业也说明大家用脚投票证明了科班身份的重要性。因此本来就来简单谈谈转计软网的二三事。",
+      "headings": [
+        "转计软网二三事",
+        "1. 为什么要转计软网？",
+        "2. 怎么转计软网？",
+        "信息收集",
+        "硬性要求",
+        "专业能力",
+        "3. 转到计软网后要怎么适应？",
+        "明确方向",
+        "摆正心态",
+        "是否应该降级",
+        "提升实力",
+        "选课相关"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/14-transfer-major.md",
+      "lines": 126,
+      "bytes": 12631,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/16-ai-internship.md",
+      "title": "AI算法类实习经验指北",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "在计算机包括哪些方向？如何选择这些方向？中，SCUer们已经了解到了AI领域的具体分类。笔者本科期间参与了两段AI算法类实习，下文将结合你川实际情况分享一些经验。",
+      "headings": [
+        "AI算法类实习经验指北",
+        "Q & A",
+        "实习公司选择"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/16-ai-internship.md",
+      "lines": 39,
+      "bytes": 3992,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/17-system-internship.md",
+      "title": "System类实习经验指北",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "在前面的计算机包括哪些方向？如何选择这些方向？板块中，题主已经为SCUer介绍过各类方向，其中包括System大类。",
+      "headings": [
+        "System类实习经验指北",
+        "什么是System？",
+        "为什么System如此注重实习？",
+        "如何找System实习"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/17-system-internship.md",
+      "lines": 80,
+      "bytes": 7470,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/18-deep-dive-to-ocw.md",
+      "title": "MIT OCW 与公开课自学",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "前言：本文是一篇对 MIT open course ware 及 MIT 系公开课程的推广。",
+      "headings": [
+        "MIT OCW 与公开课自学",
+        "动机",
+        "课程资源",
+        "课程评价网",
+        "专业方向发展",
+        "计算机系统",
+        "实习",
+        "行业观察",
+        "开源活动",
+        "远程工作",
+        "常见问题",
+        "初期"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/18-deep-dive-to-ocw.md",
+      "lines": 105,
+      "bytes": 10091,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/19-if-not-cs.md",
+      "title": "给非科班同学的一些建议",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "本文主要目标群体是对泛CS领域非常感兴趣，但由于各种原因没有转专业的同学。",
+      "headings": [
+        "给非科班同学的一些建议",
+        "序",
+        "困难与风险",
+        "选课机制受限",
+        "科班身份问题",
+        "环境反馈 & 视野闭塞",
+        "实验资源保障",
+        "变通之路",
+        "课程选择",
+        "研究尝试",
+        "申请方向",
+        "心态转换"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/19-if-not-cs.md",
+      "lines": 119,
+      "bytes": 9310,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/2-what-to-learn.md",
+      "title": "我们要学会什么？",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "作为计算机专业的学生，我觉得大家很少认真地问过自己，我们究竟要学会什么，学成什么样。笔者曾经跟国内某985高校的某位数学专业准研究生交流，他认为计算机学的只是编程啥的，这样和培训班没啥区别，他觉得大学应该学一点更加通用，更加抽象一些的知识——比如数学。当时我还没踏入大学校门，计算机对我来说也可能只是写点代码来解放自己的双手。当时的我虽然对他的说法不认同...",
+      "headings": [
+        "我们要学会什么？",
+        "形而下者谓之器",
+        "形而上者谓之道",
+        "回到开头"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/2-what-to-learn.md",
+      "lines": 27,
+      "bytes": 5163,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/3-fields.md",
+      "title": "计算机包括哪些方向？如何选择这些方向？",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "这里参考 CSRankings 对于计算机研究方向的分类，并不全面，而且很多都是我个人的理解，不一定准确，主要是帮助各位SCU的本科学弟学妹科普。并且由于我本人主要是研究System这一大块方向的，所以主要介绍System这一大类。",
+      "headings": [
+        "计算机包括哪些方向？如何选择这些方向？"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/3-fields.md",
+      "lines": 46,
+      "bytes": 7016,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/4-important-basics.md",
+      "title": "重要的基础课",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "川大的CS相关基础课程质量相信各位已经见识过了，下面WhileBug将逐一介绍一些重要的基础课程，以及如何在你川糟糕的基础课程条件下自救。",
+      "headings": [
+        "重要的基础课",
+        "数学篇-数学到底有没有用以及一些推荐课程",
+        "CS基础篇-小白如何建立起对CS的整体了解以及相关基础课程",
+        "AI进阶篇-如何进入AI的世界",
+        "System进阶篇-如何进入System的世界"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/4-important-basics.md",
+      "lines": 24,
+      "bytes": 1924,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/8-what-is-research.md",
+      "title": "什么是科研",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "该章节适用于“搞研究”的人，笔者知道很多人为了研究生毕业，或者为了本科保研加分等，迫不得已需要发一些论文，如何去快速产生一篇能发表的文章，如何寻找一个快速接受文章的期刊，如何和编辑扯皮，甚至如何快速水论文（常见手段如叠叠乐等）等非常功利的内容不在本文的讨论范围之内。",
+      "headings": [
+        "什么是科研",
+        "发现问题",
+        "形成一套体系",
+        "同行评议"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/8-what-is-research.md",
+      "lines": 39,
+      "bytes": 6960,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/2-survive/1-GPA.md",
+      "title": "绩点到底有没有用",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "关于GPA这个东西到底有没有用是个永恒的讨论话题。计算机的课程学习自然是非常重要的东西，但是，由于绝大部分学校糟糕的课程考核及评价体系，导致GPA实际上并不一定能够很准确地描述学生对于课程的掌控程度：",
+      "headings": [
+        "绩点到底有没有用"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/2-survive/1-GPA.md",
+      "lines": 18,
+      "bytes": 3376,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/2-survive/6-double-degree.md",
+      "title": "双学位（辅修、第二学位、2+2合作）的区别",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "关于“双学位”的说法在川大，因为有众多不同的项目名称（如数学经济创新班）所以一直令大家琢磨不透，诸如“辅修”“第二学位”等貌似与双学位等同的描述更是傻傻分不清。笔者在搜集相关资料",
+      "headings": [
+        "双学位（辅修、第二学位、2+2合作）的区别",
+        "双学位（辅修、第二学位、2+2合作）的举例以及认可度",
+        "双学位（辅修、第二学位、2+2合作）的途径"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/2-survive/6-double-degree.md",
+      "lines": 26,
+      "bytes": 3460,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/3-future/1-1-abroad-PhD.md",
+      "title": "出国读PhD如何规划",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "不少同学也有出国读PhD的打算，我们将在本文大致梳理一下泥川CS出国读PhD需要了解的申请。",
+      "headings": [
+        "出国读PhD如何规划",
+        "1-整体流程",
+        "2-暑研的重要性&如何套瓷暑研",
+        "2-1-什么是暑研",
+        "2-2-暑研的重要性",
+        "2-3-如何套瓷暑研",
+        "3-不同学校的Admission制度不同",
+        "4-推荐信",
+        "4-1-推荐信为什么重要",
+        "4-2-一些注意事项"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/3-future/1-1-abroad-PhD.md",
+      "lines": 98,
+      "bytes": 7051,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/3-future/2-domestic-study.md",
+      "title": "国内升学",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "本题笔者先去清华读的硕士研究生（后续即将出国PhD），这里说下WhileBug对国内升学的一些看法以及一些Tips。",
+      "headings": [
+        "国内升学",
+        "国内升学的动机",
+        "国内找工/进体制内",
+        "国内PhD/国外PhD跳板"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/3-future/2-domestic-study.md",
+      "lines": 45,
+      "bytes": 3639,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/4-experience-sharing/2-work-or-study.md",
+      "title": "深造还是工作？关于读研的劝退",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "笔者近年来在自己经历了，保研，退学，出国的同时，也和不少的学弟学妹就深造还是工作这一经久不衰的日经问题进行过广泛且深入的探讨。就此，笔者也想在这一章节分享一下自己的一些看法，主要会集中于讨论为了就业读研这一话题，同时也算是对自己一路走来的遇到的形形色色的种种事情做一个简单的总结和分享吧。",
+      "headings": [
+        "深造还是工作？关于读研的劝退",
+        "确定发展规划",
+        "典中典之《读完研再找工作》",
+        "一些碎碎念",
+        "一笔账",
+        "总结一下"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/4-experience-sharing/2-work-or-study.md",
+      "lines": 37,
+      "bytes": 6123,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/4-experience-sharing/3-PhD.md",
+      "title": "一些关于PhD的理解误区",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "笔者在跟一些学弟学妹进行交流的时候，发现很多学弟学妹对读博存在非常严重的误区。这里笔者们就用自己的想法给大家纠正一些PhD的理解误区。在这里先放一张知乎上找来的图，可能略有些绝对，但大家可以对照自查一下。",
+      "headings": [
+        "一些关于PhD的理解误区",
+        "读博和读硕读本科没有区别，都是读书嘛",
+        "我读完博肯定能当教授",
+        "读博不是不累，甚至很轻松，是wlb（work-life-balance）",
+        "找了教职就能（在国内）躺平了",
+        "读完博能挣大钱（去工业界和学术界都能挣打钱）",
+        "直博去不了top名校，可以读个ms当跳板去",
+        "我对科研不排斥，但也不是很有兴趣，我适合读博吗？"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/4-experience-sharing/3-PhD.md",
+      "lines": 66,
+      "bytes": 6585,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/4-experience-sharing/4-BusinessCS.md",
+      "title": "Management Information Systems & Operations Management & Operations Research：泛CS专业、商科、理工科学术",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "自上个世纪20年代，OR（运筹学）诞生并与CS一同不断发展，不同学科的学术交叉下形成了现在的几个有联系的学科：MIS（信息管理系统）、OM（运营管理）、DS（数据科学）与OR（运筹学）。另外还有quant marketing等。由于笔者知识有限，只能写下浅显的些许介绍性质内容方便大家管中窥豹，并且分享一些资料。",
+      "headings": [
+        "Management Information Systems & Operations Management & Operations Research：泛CS专业、商科、理工科学术"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/4-experience-sharing/4-BusinessCS.md",
+      "lines": 52,
+      "bytes": 5487,
+      "empty": false,
+      "generated": false
+    },
+    {
+      "path": "survive_scu_manual/4-experience-sharing/5-留学标化考试自学指南.md",
+      "title": "留学标化考试自学指南-WhileBug经验贴",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "题主分别在2021年进行过两次IELTS笔试，两次GRE考试，一次TOEFL考试。然后在2024年又进行过三次IELTS考试。",
+      "headings": [
+        "留学标化考试自学指南-WhileBug经验贴",
+        "背景简介",
+        "报不报机构？",
+        "雅思还是托福？",
+        "雅思考试经验分享",
+        "听力篇",
+        "阅读篇",
+        "口语篇",
+        "写作篇",
+        "托福考试经验分享-TBD",
+        "GRE考试经验分享-TBD"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/4-experience-sharing/5-留学标化考试自学指南.md",
+      "lines": 93,
+      "bytes": 7083,
+      "empty": false,
+      "generated": false
+    }
+  ],
+  "resources": [
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView-0.98.tar.gz",
+      "title": "DSView 0.98.tar",
+      "category": "硬件工具资料",
+      "extension": ".gz",
+      "size": 3582163,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView-0.98.tar.gz"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView-v0.98.dmg",
+      "title": "DSView v0.98",
+      "category": "硬件工具资料",
+      "extension": ".dmg",
+      "size": 32968927,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView-v0.98.dmg"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView_User_Guide_v0.98_ch.pdf",
+      "title": "DSView User Guide v0.98 ch",
+      "category": "硬件工具资料",
+      "extension": ".pdf",
+      "size": 2108245,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView_User_Guide_v0.98_ch.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView_v0.98_x64_setup_cn.exe",
+      "title": "DSView v0.98 x64 setup cn",
+      "category": "硬件工具资料",
+      "extension": ".exe",
+      "size": 22095390,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DSView_v0.98_x64_setup_cn.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DreamSourceLab_20180406014755.png",
+      "title": "DreamSourceLab 20180406014755",
+      "category": "硬件工具资料",
+      "extension": ".png",
+      "size": 1734646,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/DSView USB示波器逻辑分析仪/DreamSourceLab_20180406014755.png"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/UNI-T示波器 UTD2025CL使用手册.pdf",
+      "title": "UNI T示波器 UTD2025CL使用手册",
+      "category": "硬件工具资料",
+      "extension": ".pdf",
+      "size": 11663175,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/UNI-T示波器 UTD2025CL使用手册.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/万用表/fluke 18B+.pdf",
+      "title": "fluke 18B+",
+      "category": "硬件工具资料",
+      "extension": ".pdf",
+      "size": 1275747,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/万用表/fluke 18B+.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/万用表/万用表功能及使用.ppt",
+      "title": "万用表功能及使用",
+      "category": "硬件工具资料",
+      "extension": ".ppt",
+      "size": 9052160,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/万用表/万用表功能及使用.ppt"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/万用表/万用表的使用.ppt",
+      "title": "万用表的使用",
+      "category": "硬件工具资料",
+      "extension": ".ppt",
+      "size": 7213056,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/万用表/万用表的使用.ppt"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/串口模块使用说明.pdf",
+      "title": "串口模块使用说明",
+      "category": "硬件工具资料",
+      "extension": ".pdf",
+      "size": 833294,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/串口模块使用说明.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/ITW吸锡线如何使用？操作步骤.docx",
+      "title": "ITW吸锡线如何使用？操作步骤",
+      "category": "硬件工具资料",
+      "extension": ".docx",
+      "size": 658005,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/ITW吸锡线如何使用？操作步骤.docx"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁使用方法.ppt",
+      "title": "电烙铁使用方法",
+      "category": "硬件工具资料",
+      "extension": ".ppt",
+      "size": 3058176,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁使用方法.ppt"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁手工焊接2.ppt",
+      "title": "电烙铁手工焊接2",
+      "category": "硬件工具资料",
+      "extension": ".ppt",
+      "size": 2485760,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁手工焊接2.ppt"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁焊接技术学习资料.pdf",
+      "title": "电烙铁焊接技术学习资料",
+      "category": "硬件工具资料",
+      "extension": ".pdf",
+      "size": 2556776,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁焊接技术学习资料.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁的使用方法.ppt",
+      "title": "电烙铁的使用方法",
+      "category": "硬件工具资料",
+      "extension": ".ppt",
+      "size": 1289216,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/焊接技术/电烙铁的使用方法.ppt"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/2.hardware_tools/网线制作图解(无积分-全面细致).ppt",
+      "title": "网线制作图解(无积分 全面细致)",
+      "category": "硬件工具资料",
+      "extension": ".ppt",
+      "size": 2015744,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/2.hardware_tools/网线制作图解(无积分-全面细致).ppt"
+    },
+    {
+      "path": "awesome_handbook/static/HC-SR501/HC-SR501-Motion-Detector-Pin-Outs.png",
+      "title": "HC SR501 Motion Detector Pin Outs",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 13869,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/HC-SR501/HC-SR501-Motion-Detector-Pin-Outs.png"
+    },
+    {
+      "path": "awesome_handbook/static/HC-SR501/HC-SR501-back-pic.png",
+      "title": "HC SR501 back pic",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 102700,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/HC-SR501/HC-SR501-back-pic.png"
+    },
+    {
+      "path": "awesome_handbook/static/HC-SR501/HC-SR501-screen.jpg",
+      "title": "HC SR501 screen",
+      "category": "站内插图与图片素材",
+      "extension": ".jpg",
+      "size": 377261,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/HC-SR501/HC-SR501-screen.jpg"
+    },
+    {
+      "path": "awesome_handbook/static/HC-SR501/raspbarry-with-HC-SR501.jpg",
+      "title": "raspbarry with HC SR501",
+      "category": "站内插图与图片素材",
+      "extension": ".jpg",
+      "size": 442619,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/HC-SR501/raspbarry-with-HC-SR501.jpg"
+    },
+    {
+      "path": "awesome_handbook/static/HC-SR501/rpi-pins-40-0.png",
+      "title": "rpi pins 40 0",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 185952,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/HC-SR501/rpi-pins-40-0.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/linklt_web_ui.png",
+      "title": "linklt web ui",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 37445,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/linklt_web_ui.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/make-menuconfig.png",
+      "title": "make menuconfig",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 53772,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/make-menuconfig.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/menuconfig-result.png",
+      "title": "menuconfig result",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 70687,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/menuconfig-result.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/openwrt-back-pic.png",
+      "title": "openwrt back pic",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 13810,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/openwrt-back-pic.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/openwrt_ui.png",
+      "title": "openwrt ui",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 62387,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/openwrt_ui.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/serial.png",
+      "title": "serial",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 45645,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/serial.png"
+    },
+    {
+      "path": "awesome_handbook/static/OpenWrt/xshell_serial_setting.png",
+      "title": "xshell serial setting",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 18940,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/static/OpenWrt/xshell_serial_setting.png"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/PhdPayment.jpeg",
+      "title": "PhdPayment",
+      "category": "站内插图与图片素材",
+      "extension": ".jpeg",
+      "size": 51349,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/PhdPayment.jpeg"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/Should-I-get-a-phd.jpg",
+      "title": "Should I get a phd",
+      "category": "站内插图与图片素材",
+      "extension": ".jpg",
+      "size": 71453,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/Should-I-get-a-phd.jpg"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/image (1).png",
+      "title": "image (1)",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 151935,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/image (1).png"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/image (2).png",
+      "title": "image (2)",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 347231,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/image (2).png"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/image (3).png",
+      "title": "image (3)",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 175854,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/image (3).png"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/image.png",
+      "title": "image",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 15536,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/image.png"
+    },
+    {
+      "path": "survive_scu_manual/.gitbook/assets/what-is-a-phd.png",
+      "title": "what is a phd",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 711502,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/.gitbook/assets/what-is-a-phd.png"
+    },
+    {
+      "path": "survive_scu_manual/4-experience-sharing/5-cornell.png",
+      "title": "5 cornell",
+      "category": "站内插图与图片素材",
+      "extension": ".png",
+      "size": 113721,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/survive_scu_manual/4-experience-sharing/5-cornell.png"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/1. ANYCUBIC Photon User Manual_English_20171229.pdf",
+      "title": "1. ANYCUBIC Photon User Manual English 20171229",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 6549511,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/1. ANYCUBIC Photon User Manual_English_20171229.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/1. ANYCUBIC Photon-中文-20171229-V6.pdf",
+      "title": "1. ANYCUBIC Photon 中文 20171229 V6",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 3214149,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/1. ANYCUBIC Photon-中文-20171229-V6.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/2. Kossel使用说明书V2.pdf",
+      "title": "2. Kossel使用说明书V2",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 8944628,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/2. Kossel使用说明书V2.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/PTV3000_DS_04Oct13.pdf",
+      "title": "PTV3000 DS 04Oct13",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 366860,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/PTV3000_DS_04Oct13.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/PTV3000_IG_NA_3May13.pdf",
+      "title": "PTV3000 IG NA 3May13",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 2181914,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/PTV3000_IG_NA_3May13.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/PTV3000_UM_23Apr2013.pdf",
+      "title": "PTV3000 UM 23Apr2013",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 936126,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/PTV3000_UM_23Apr2013.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/1.devices/UTD2000-3000使用手册.pdf",
+      "title": "UTD2000 3000使用手册",
+      "category": "设备与仪器手册",
+      "extension": ".pdf",
+      "size": 11663175,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/1.devices/UTD2000-3000使用手册.pdf"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/AIDA64 5.80.rar",
+      "title": "AIDA64 5.80",
+      "category": "软件工具包",
+      "extension": ".rar",
+      "size": 50925594,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/AIDA64 5.80.rar"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/ATTO Disk bench32.exe",
+      "title": "ATTO Disk bench32",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 432160,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/ATTO Disk bench32.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/Bandicam_2.0.3.674超好屏幕录像.zip",
+      "title": "Bandicam 2.0.3.674超好屏幕录像",
+      "category": "软件工具包",
+      "extension": ".zip",
+      "size": 27899865,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/Bandicam_2.0.3.674超好屏幕录像.zip"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/FileZilla64.zip",
+      "title": "FileZilla64",
+      "category": "软件工具包",
+      "extension": ".zip",
+      "size": 6488909,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/FileZilla64.zip"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/HDTunePro 5.5.exe",
+      "title": "HDTunePro 5.5",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 658988,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/HDTunePro 5.5.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/IPMSG.exe",
+      "title": "IPMSG",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 159744,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/IPMSG.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/NetAssist.exe",
+      "title": "NetAssist",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 508928,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/NetAssist.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/UartAssist.exe",
+      "title": "UartAssist",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 1044480,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/UartAssist.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/UltraEdit_lh.zip",
+      "title": "UltraEdit lh",
+      "category": "软件工具包",
+      "extension": ".zip",
+      "size": 20432874,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/UltraEdit_lh.zip"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/putty.exe",
+      "title": "putty",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 454656,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/putty.exe"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/putty详细使用说明.docx",
+      "title": "putty详细使用说明",
+      "category": "软件工具包",
+      "extension": ".docx",
+      "size": 1537173,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/putty详细使用说明.docx"
+    },
+    {
+      "path": "awesome_handbook/tools/tools_attatchment/4.software_tools/winrar-x64-511sc.exe",
+      "title": "winrar x64 511sc",
+      "category": "软件工具包",
+      "extension": ".exe",
+      "size": 2013564,
+      "publish": true,
+      "source": "projects/docs-and-handbooks/awesome_handbook/tools/tools_attatchment/4.software_tools/winrar-x64-511sc.exe"
+    }
+  ]
+}

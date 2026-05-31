@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SCU Maker 文档资料 Wiki</title>
+    <link rel="stylesheet" href="assets/wiki.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">SCU</div>
+          <div>
+            <div class="brand-title">Maker 文档资料 Wiki</div>
+            <div class="brand-meta" id="site-stats">加载中</div>
+          </div>
+        </div>
+        <input id="search" class="search" type="search" placeholder="搜索标题、路径、正文摘要" />
+        <nav id="nav" class="nav"></nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <button id="menu" class="menu" type="button" aria-label="打开目录">☰</button>
+          <div id="crumbs" class="crumbs"></div>
+          <a id="raw" class="raw" href="#" target="_blank" rel="noreferrer">Markdown 源文</a>
+        </header>
+        <article id="content" class="markdown"></article>
+        <footer class="pager">
+          <a id="prev" href="#"></a>
+          <a id="next" href="#"></a>
+        </footer>
+      </main>
+    </div>
+    <script src="assets/wiki.js"></script>
+  </body>
+</html>

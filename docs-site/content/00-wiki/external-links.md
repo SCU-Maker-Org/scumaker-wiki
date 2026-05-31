@@ -1,0 +1,54 @@
+# 外部链接检测报告
+
+构建时会把明显过期或错误格式的外链替换为较新的入口；联网检测结果如下。内部协会域名和私有地址不会按公网坏链处理。
+
+| 状态 | HTTP | 链接 | 说明 |
+| --- | ---: | --- | --- |
+| unchecked |  | <http://127.0.0.1:4173/> | 本次构建未启用 --check-external |
+| unchecked |  | <http://openwrt.org> | 本次构建未启用 --check-external |
+| unchecked |  | <https://acwing.com/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://archive.openwrt.org/chaos_calmer/15.05.1/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://atcoder.jp/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://codeforces.com/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://conanhujinming.github.io/comments-for-awesome-courses/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://cs.scu.edu.cn/e_jsjxy/Research/Research_Center.htm> | 本次构建未启用 --check-external |
+| unchecked |  | <https://csdiy.wiki/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://csrankings.org/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://csrankings.org/#/index?arch&comm&sec&mod&hpc&mobile&metrics&ops&plan&soft&da&bed&world> | 本次构建未启用 --check-external |
+| unchecked |  | <https://d2l.ai/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://github.com/conanhujinming/tips_for_interview/blob/master/README-zh_CN.md> | 本次构建未启用 --check-external |
+| unchecked |  | <https://github.com/izackwu/TeachYourselfCS-CN> | 本次构建未启用 --check-external |
+| unchecked |  | <https://github.com/openwrt/openwrt> | 本次构建未启用 --check-external |
+| unchecked |  | <https://github.com/openwrt/openwrt.git> | 本次构建未启用 --check-external |
+| unchecked |  | <https://github.com/ossu/computer-science-cn> | 本次构建未启用 --check-external |
+| unchecked |  | <https://lastminuteengineers.com/pir-sensor-arduino-tutorial/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://luogu.com.cn/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://mermaid.js.org/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://mitxonline.mit.edu/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://mypage.cuhk.edu.cn/academics/wangzizhuo/ORFAQ.html> | 本次构建未启用 --check-external |
+| unchecked |  | <https://ocw.mit.edu/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://ocw.mit.edu/search/?d=Electrical%20Engineering%20and%20Computer%20Science> | 本次构建未启用 --check-external |
+| unchecked |  | <https://openlearning.mit.edu/courses-programs/open-learning-library> | 本次构建未启用 --check-external |
+| unchecked |  | <https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem> | 本次构建未启用 --check-external |
+| unchecked |  | <https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem> | 本次构建未启用 --check-external |
+| unchecked |  | <https://orc.mit.edu/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://riis.sufe.edu.cn/jxChinese/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://rphilipzhang.github.io/rphilipzhang/OM-PhD-Application.pdf> | 本次构建未启用 --check-external |
+| unchecked |  | <https://sds.cuhk.edu.cn/en/teacher> | 本次构建未启用 --check-external |
+| unchecked |  | <https://survivesjtu.gitbook.io/survivesjtumanual/> | 本次构建未启用 --check-external |
+| unchecked |  | <https://survivesjtu.gitbook.io/survivesjtumanual/fu-lu/ben-ke-sheng-zhuan-ye-jie-shao-todo/cs-zi-jiu-zhi-bei> | 本次构建未启用 --check-external |
+| unchecked |  | <https://talent.alibaba.com/campus/position-list?campusType=talentPlan> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.bilibili.com/video/BV137411Z7LR> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.bilibili.com/video/BV1CU4y1P7PE> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.bilibili.com/video/BV1Cm4y1d7Ur> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.bilibili.com/video/BV1Cp4y1C7dv> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.bilibili.com/video/BV1Ms411A7EP> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.bilibili.com/video/BV1b7411K7P4> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.cnblogs.com/cauwj/p/17073777.html> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.cnblogs.com/cauwj/p/17074545.html> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.ieltscb.com/paper/list?cid=> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.mpja.com/download/31227sc.pdf> | 本次构建未启用 --check-external |
+| unchecked |  | <https://www.zhihu.com/people/yuck-77/answers/by_votes> | 本次构建未启用 --check-external |
+| unchecked |  | <https://ysyx.oscc.cc/project/intro.html> | 本次构建未启用 --check-external |
+| unchecked |  | <https://zhuanlan.zhihu.com/p/128037373> | 本次构建未启用 --check-external |
