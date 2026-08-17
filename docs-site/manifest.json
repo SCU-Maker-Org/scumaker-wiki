@@ -1,6 +1,6 @@
 {
   "title": "SCU Maker 文档资料 Wiki",
-  "generatedAt": "2026-05-31T16:08:14",
+  "generatedAt": "2026-08-17T13:17:47",
   "sourceRoot": "projects/docs-and-handbooks",
   "stats": {
     "pages": 41,
@@ -8,7 +8,7 @@
     "generatedPages": 9,
     "resources": 55,
     "publishedResources": 55,
-    "externalLinks": 48,
+    "externalLinks": 46,
     "brokenExternalLinks": 0
   },
   "pages": [
@@ -17,22 +17,21 @@
       "title": "SCU Maker 文档资料 Wiki",
       "section": "站点总览",
       "collection": "生成索引",
-      "excerpt": "这个站点整理 SCU Maker 协会的介绍、学习路线、技术教程、藏书和资料附件。SCU 自学手册 与协会主体关联较弱，已降级为历史参考。",
+      "excerpt": "这里整理 SCU Maker 协会的介绍、学习路线、技术教程、藏书和资料附件。当前收录 32 篇文档、55 个资源；SCU 自学手册 作为历史参考单独归档。",
       "headings": [
         "SCU Maker 文档资料 Wiki",
-        "新人入口",
-        "协会资料",
-        "归档与维护",
-        "页面规模",
-        "资源规模",
-        "链接状态",
-        "公开部署提醒"
+        "从这里开始",
+        "协会与技术",
+        "资料与归档",
+        "站点维护"
       ],
       "source": "generated",
-      "lines": 51,
-      "bytes": 1571,
+      "lines": 32,
+      "bytes": 1390,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "开始使用",
+      "navSubgroup": "首页"
     },
     {
       "path": "00-wiki/external-links.md",
@@ -44,10 +43,12 @@
         "外部链接检测报告"
       ],
       "source": "generated",
-      "lines": 54,
-      "bytes": 5456,
+      "lines": 52,
+      "bytes": 4329,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "站点维护",
+      "navSubgroup": "索引与检查"
     },
     {
       "path": "00-wiki/missing-links.md",
@@ -62,9 +63,11 @@
       ],
       "source": "generated",
       "lines": 26,
-      "bytes": 4373,
+      "bytes": 4343,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "站点维护",
+      "navSubgroup": "索引与检查"
     },
     {
       "path": "00-wiki/resources.md",
@@ -79,7 +82,9 @@
       "lines": 10,
       "bytes": 766,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "资源库",
+      "navSubgroup": "分类资源"
     },
     {
       "path": "00-wiki/wiki-map.md",
@@ -98,82 +103,106 @@
       ],
       "source": "generated",
       "lines": 50,
-      "bytes": 2947,
+      "bytes": 2948,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "站点维护",
+      "navSubgroup": "索引与检查"
     },
     {
       "path": "00-wiki/resources/device-manuals.md",
       "title": "设备与仪器手册",
       "section": "站点总览",
       "collection": "生成索引",
-      "excerpt": "设备与仪器手册",
+      "excerpt": "设备说明书、用户手册或安装指南。",
       "headings": [
         "设备与仪器手册"
       ],
       "source": "generated",
-      "lines": 11,
-      "bytes": 2086,
+      "lines": 13,
+      "bytes": 1137,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "资源库",
+      "navSubgroup": "分类资源"
     },
     {
       "path": "00-wiki/resources/hardware-tools.md",
       "title": "硬件工具资料",
       "section": "站点总览",
       "collection": "生成索引",
-      "excerpt": "硬件工具资料",
+      "excerpt": "焊接、万用表、逻辑分析仪、串口模块等工具资料。",
       "headings": [
         "硬件工具资料"
       ],
       "source": "generated",
-      "lines": 20,
-      "bytes": 5609,
+      "lines": 22,
+      "bytes": 2760,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "资源库",
+      "navSubgroup": "分类资源"
     },
     {
       "path": "00-wiki/resources/images.md",
       "title": "站内插图与图片素材",
       "section": "站点总览",
       "collection": "生成索引",
-      "excerpt": "站内插图与图片素材",
+      "excerpt": "Markdown 页面引用的图片或保留素材。",
       "headings": [
         "站内插图与图片素材"
       ],
       "source": "generated",
-      "lines": 24,
-      "bytes": 4294,
+      "lines": 26,
+      "bytes": 2170,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "资源库",
+      "navSubgroup": "分类资源"
     },
     {
       "path": "00-wiki/resources/software-tools.md",
       "title": "软件工具包",
       "section": "站点总览",
       "collection": "生成索引",
-      "excerpt": "软件工具包",
+      "excerpt": "历史软件工具、安装包或使用说明。",
       "headings": [
         "软件工具包"
       ],
       "source": "generated",
-      "lines": 16,
-      "bytes": 3190,
+      "lines": 20,
+      "bytes": 1743,
       "empty": false,
-      "generated": true
+      "generated": true,
+      "navGroup": "资源库",
+      "navSubgroup": "分类资源"
     },
     {
       "path": "awesome_handbook/2020协会招新公告.md",
-      "title": "2020协会招新公告",
+      "title": "2020 协会招新公告",
       "section": "协会知识库",
       "collection": "协会介绍与技术教程",
       "excerpt": "我们是一群创客，自主创新，动手实践。软件编程、硬件电路都玩得转！",
-      "headings": [],
+      "headings": [
+        "2020 协会招新公告",
+        "什么是开源硬件协会？",
+        "怎么加入我们？",
+        "社团问卷",
+        "会员与干事招新",
+        "宣传部",
+        "项目部",
+        "运维部",
+        "基管部",
+        "资深会员",
+        "申请要求"
+      ],
       "source": "projects/docs-and-handbooks/awesome_handbook/2020协会招新公告.md",
-      "lines": 41,
-      "bytes": 1833,
+      "lines": 51,
+      "bytes": 1931,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "协会资料",
+      "navSubgroup": "协会介绍"
     },
     {
       "path": "awesome_handbook/协会整体介绍.md",
@@ -191,7 +220,9 @@
       "lines": 29,
       "bytes": 3095,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "协会资料",
+      "navSubgroup": "协会介绍"
     },
     {
       "path": "awesome_handbook/software/openwrt交叉编译教程.md",
@@ -210,7 +241,9 @@
       "lines": 153,
       "bytes": 6774,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "协会资料",
+      "navSubgroup": "技术教程"
     },
     {
       "path": "awesome_handbook/software/树莓派的应用之HC-SR501模块.md",
@@ -228,9 +261,11 @@
       ],
       "source": "projects/docs-and-handbooks/awesome_handbook/software/树莓派的应用之HC-SR501模块.md",
       "lines": 63,
-      "bytes": 4015,
+      "bytes": 3933,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "协会资料",
+      "navSubgroup": "技术教程"
     },
     {
       "path": "awesome_handbook/tools/wiki教程.md",
@@ -250,7 +285,9 @@
       "lines": 59,
       "bytes": 1771,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "协会资料",
+      "navSubgroup": "维护方法"
     },
     {
       "path": "learning_guide/README.md",
@@ -269,7 +306,9 @@
       "lines": 55,
       "bytes": 1875,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "开始使用",
+      "navSubgroup": "新人学习路线"
     },
     {
       "path": "learning_guide/introduction/README.md",
@@ -288,7 +327,9 @@
       "lines": 58,
       "bytes": 4196,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "开始使用",
+      "navSubgroup": "新人学习路线"
     },
     {
       "path": "learning_guide/language/README.md",
@@ -306,7 +347,9 @@
       "lines": 57,
       "bytes": 2332,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "开始使用",
+      "navSubgroup": "新人学习路线"
     },
     {
       "path": "learning_guide/server/README.md",
@@ -321,7 +364,9 @@
       "lines": 59,
       "bytes": 2187,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "开始使用",
+      "navSubgroup": "新人学习路线"
     },
     {
       "path": "books/README.md",
@@ -347,7 +392,9 @@
       "lines": 147,
       "bytes": 3545,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "资源库",
+      "navSubgroup": "图书资料"
     },
     {
       "path": "survive_scu_manual/README.md",
@@ -368,7 +415,9 @@
       "lines": 45,
       "bytes": 1856,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "归档首页"
     },
     {
       "path": "survive_scu_manual/00-introduction/introduction.md",
@@ -383,7 +432,9 @@
       "lines": 20,
       "bytes": 2370,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "手册说明"
     },
     {
       "path": "survive_scu_manual/1-save-self/1-why-JRW.md",
@@ -398,7 +449,87 @@
       "lines": 15,
       "bytes": 3251,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/2-what-to-learn.md",
+      "title": "我们要学会什么？",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "作为计算机专业的学生，我觉得大家很少认真地问过自己，我们究竟要学会什么，学成什么样。笔者曾经跟国内某985高校的某位数学专业准研究生交流，他认为计算机学的只是编程啥的，这样和培训班没啥区别，他觉得大学应该学一点更加通用，更加抽象一些的知识——比如数学。当时我还没踏入大学校门，计算机对我来说也可能只是写点代码来解放自己的双手。当时的我虽然对他的说法不认同...",
+      "headings": [
+        "我们要学会什么？",
+        "形而下者谓之器",
+        "形而上者谓之道",
+        "回到开头"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/2-what-to-learn.md",
+      "lines": 27,
+      "bytes": 5163,
+      "empty": false,
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/3-fields.md",
+      "title": "计算机包括哪些方向？如何选择这些方向？",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "这里参考 CSRankings 对于计算机研究方向的分类，并不全面，而且很多都是我个人的理解，不一定准确，主要是帮助各位SCU的本科学弟学妹科普。并且由于我本人主要是研究System这一大块方向的，所以主要介绍System这一大类。",
+      "headings": [
+        "计算机包括哪些方向？如何选择这些方向？"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/3-fields.md",
+      "lines": 46,
+      "bytes": 7016,
+      "empty": false,
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/4-important-basics.md",
+      "title": "重要的基础课",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "川大的CS相关基础课程质量相信各位已经见识过了，下面WhileBug将逐一介绍一些重要的基础课程，以及如何在你川糟糕的基础课程条件下自救。",
+      "headings": [
+        "重要的基础课",
+        "数学篇-数学到底有没有用以及一些推荐课程",
+        "CS基础篇-小白如何建立起对CS的整体了解以及相关基础课程",
+        "AI进阶篇-如何进入AI的世界",
+        "System进阶篇-如何进入System的世界"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/4-important-basics.md",
+      "lines": 24,
+      "bytes": 1924,
+      "empty": false,
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
+    },
+    {
+      "path": "survive_scu_manual/1-save-self/8-what-is-research.md",
+      "title": "什么是科研",
+      "section": "历史参考",
+      "collection": "SCU 自学手册归档",
+      "excerpt": "该章节适用于“搞研究”的人，笔者知道很多人为了研究生毕业，或者为了本科保研加分等，迫不得已需要发一些论文，如何去快速产生一篇能发表的文章，如何寻找一个快速接受文章的期刊，如何和编辑扯皮，甚至如何快速水论文（常见手段如叠叠乐等）等非常功利的内容不在本文的讨论范围之内。",
+      "headings": [
+        "什么是科研",
+        "发现问题",
+        "形成一套体系",
+        "同行评议"
+      ],
+      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/8-what-is-research.md",
+      "lines": 39,
+      "bytes": 6960,
+      "empty": false,
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/11-cope-with-anxiety.md",
@@ -413,7 +544,9 @@
       "lines": 23,
       "bytes": 3962,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/12-improve-coding.md",
@@ -438,7 +571,9 @@
       "lines": 92,
       "bytes": 9970,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/14-transfer-major.md",
@@ -464,7 +599,9 @@
       "lines": 126,
       "bytes": 12631,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/16-ai-internship.md",
@@ -481,7 +618,9 @@
       "lines": 39,
       "bytes": 3992,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/17-system-internship.md",
@@ -499,7 +638,9 @@
       "lines": 80,
       "bytes": 7470,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/18-deep-dive-to-ocw.md",
@@ -525,7 +666,9 @@
       "lines": 105,
       "bytes": 10091,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/1-save-self/19-if-not-cs.md",
@@ -551,77 +694,9 @@
       "lines": 119,
       "bytes": 9310,
       "empty": false,
-      "generated": false
-    },
-    {
-      "path": "survive_scu_manual/1-save-self/2-what-to-learn.md",
-      "title": "我们要学会什么？",
-      "section": "历史参考",
-      "collection": "SCU 自学手册归档",
-      "excerpt": "作为计算机专业的学生，我觉得大家很少认真地问过自己，我们究竟要学会什么，学成什么样。笔者曾经跟国内某985高校的某位数学专业准研究生交流，他认为计算机学的只是编程啥的，这样和培训班没啥区别，他觉得大学应该学一点更加通用，更加抽象一些的知识——比如数学。当时我还没踏入大学校门，计算机对我来说也可能只是写点代码来解放自己的双手。当时的我虽然对他的说法不认同...",
-      "headings": [
-        "我们要学会什么？",
-        "形而下者谓之器",
-        "形而上者谓之道",
-        "回到开头"
-      ],
-      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/2-what-to-learn.md",
-      "lines": 27,
-      "bytes": 5163,
-      "empty": false,
-      "generated": false
-    },
-    {
-      "path": "survive_scu_manual/1-save-self/3-fields.md",
-      "title": "计算机包括哪些方向？如何选择这些方向？",
-      "section": "历史参考",
-      "collection": "SCU 自学手册归档",
-      "excerpt": "这里参考 CSRankings 对于计算机研究方向的分类，并不全面，而且很多都是我个人的理解，不一定准确，主要是帮助各位SCU的本科学弟学妹科普。并且由于我本人主要是研究System这一大块方向的，所以主要介绍System这一大类。",
-      "headings": [
-        "计算机包括哪些方向？如何选择这些方向？"
-      ],
-      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/3-fields.md",
-      "lines": 46,
-      "bytes": 7016,
-      "empty": false,
-      "generated": false
-    },
-    {
-      "path": "survive_scu_manual/1-save-self/4-important-basics.md",
-      "title": "重要的基础课",
-      "section": "历史参考",
-      "collection": "SCU 自学手册归档",
-      "excerpt": "川大的CS相关基础课程质量相信各位已经见识过了，下面WhileBug将逐一介绍一些重要的基础课程，以及如何在你川糟糕的基础课程条件下自救。",
-      "headings": [
-        "重要的基础课",
-        "数学篇-数学到底有没有用以及一些推荐课程",
-        "CS基础篇-小白如何建立起对CS的整体了解以及相关基础课程",
-        "AI进阶篇-如何进入AI的世界",
-        "System进阶篇-如何进入System的世界"
-      ],
-      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/4-important-basics.md",
-      "lines": 24,
-      "bytes": 1924,
-      "empty": false,
-      "generated": false
-    },
-    {
-      "path": "survive_scu_manual/1-save-self/8-what-is-research.md",
-      "title": "什么是科研",
-      "section": "历史参考",
-      "collection": "SCU 自学手册归档",
-      "excerpt": "该章节适用于“搞研究”的人，笔者知道很多人为了研究生毕业，或者为了本科保研加分等，迫不得已需要发一些论文，如何去快速产生一篇能发表的文章，如何寻找一个快速接受文章的期刊，如何和编辑扯皮，甚至如何快速水论文（常见手段如叠叠乐等）等非常功利的内容不在本文的讨论范围之内。",
-      "headings": [
-        "什么是科研",
-        "发现问题",
-        "形成一套体系",
-        "同行评议"
-      ],
-      "source": "projects/docs-and-handbooks/survive_scu_manual/1-save-self/8-what-is-research.md",
-      "lines": 39,
-      "bytes": 6960,
-      "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "自我提升"
     },
     {
       "path": "survive_scu_manual/2-survive/1-GPA.md",
@@ -636,7 +711,9 @@
       "lines": 18,
       "bytes": 3376,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "校园生存"
     },
     {
       "path": "survive_scu_manual/2-survive/6-double-degree.md",
@@ -653,7 +730,9 @@
       "lines": 26,
       "bytes": 3460,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "校园生存"
     },
     {
       "path": "survive_scu_manual/3-future/1-1-abroad-PhD.md",
@@ -677,7 +756,9 @@
       "lines": 98,
       "bytes": 7051,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "升学规划"
     },
     {
       "path": "survive_scu_manual/3-future/2-domestic-study.md",
@@ -695,7 +776,9 @@
       "lines": 45,
       "bytes": 3639,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "升学规划"
     },
     {
       "path": "survive_scu_manual/4-experience-sharing/2-work-or-study.md",
@@ -715,7 +798,9 @@
       "lines": 37,
       "bytes": 6123,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "经验分享"
     },
     {
       "path": "survive_scu_manual/4-experience-sharing/3-PhD.md",
@@ -737,7 +822,9 @@
       "lines": 66,
       "bytes": 6585,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "经验分享"
     },
     {
       "path": "survive_scu_manual/4-experience-sharing/4-BusinessCS.md",
@@ -752,7 +839,9 @@
       "lines": 52,
       "bytes": 5487,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "经验分享"
     },
     {
       "path": "survive_scu_manual/4-experience-sharing/5-留学标化考试自学指南.md",
@@ -777,7 +866,9 @@
       "lines": 93,
       "bytes": 7083,
       "empty": false,
-      "generated": false
+      "generated": false,
+      "navGroup": "历史手册",
+      "navSubgroup": "经验分享"
     }
   ],
   "resources": [

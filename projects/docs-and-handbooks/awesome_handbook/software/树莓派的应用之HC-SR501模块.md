@@ -13,7 +13,7 @@ tags:
 ## 0x00 
 下面介绍人体感应模块 **HC-SR501**。
 
-其中 PDF 版本的详细说明参考 [在这里](https://www.mpja.com/download/31227sc.pdf)， 本文参考于 [arduino](http://www.arduino.cn/thread-2851-1-1.html)
+本文参考了 [Arduino 社区教程](http://www.arduino.cn/thread-2851-1-1.html)。
 
 ## 0x01
 ![](/static/HC-SR501/HC-SR501-Motion-Detector-Pin-Outs.png)
@@ -73,4 +73,3 @@ except KeyboardInterrupt:       #capture the Ctrl+c， before it exit, I clean t
 ![](/static/HC-SR501/HC-SR501-screen.jpg)
 以及树莓派的照片
 ![](/static/HC-SR501/raspbarry-with-HC-SR501.jpg)
-

@@ -12,7 +12,7 @@
 - OR/Math+CS+商科/社科领域的应用==OM，参考Uchi Booth的介绍翻译：利用数学和计算机方法进行研究（目前较多使用Machine Learning），帮助管理人员开发更好的系统并做出更好的决策。OR和OM在研究内容上并没有很大区别，可以参考cuhk的Pro.Zhang, Philip Renyu所分享的[申请经历](https://rphilipzhang.github.io/rphilipzhang/OM-PhD-Application.pdf)，虽然年代久远但依旧很有价值。
 - CS+商科/社科领域的应用==MIS，目前较多涉及Machine Learning，Data Mining等。
 - 此处的OM与MIS特指商学院下的专业，与ischool下的相关专业在制度上有所不同，研究内容相似。每个商学院相关系的名称不一样，如Upenn Warton底下叫做Operations, Information and Decisions
-- Data Science学院的研究较杂，会涉及多个专业招生。国内如[港中深数据科学学院](https://sds.cuhk.edu.cn/en/teacher)学术水平非常高，有OR、CS、OM相关领域的老师，大家可以尝试套磁做科研。
+- Data Science学院的研究较杂，会涉及多个专业招生。国内如[港中深数据科学学院](https://sds.cuhk.edu.cn/teacher-search)学术水平非常高，有OR、CS、OM相关领域的老师，大家可以尝试套磁做科研。
 
 以上这些专业很多非常欢迎CS背景的学生且研究内容与CS关联紧密，PhD中绝大部分是CS或者Math本科。如Umich Ross商学院PhD几乎都是录的清北数学本。这几个学科联系非常紧密，从申请的角度在笔者看来，这些项目大致可以分为三类：
 1.商学院下的program 
@@ -23,7 +23,7 @@
 - 绝大部分是committee制，意味着套磁的话大部分老师都是模板回复鼓励申请之类，即使不陶瓷也可以拿offer（当然套磁肯定也不坏事）。此外养PhD candidate的费用由系里出，师生关系相对更良好。国内的top院校是在第二年再选择导师（如清华、复旦）
 - 录取人数少（-）。基本上对于一个专业，各系一年只招1-2名PhD（例外如哥大DRO一年4个），北美一年加起来招大概不到100个PhD，如果是非minority可能得减半。这意味着难度极大，非top选手的offer好坏运气成分较大。贡献两个dp（几年前）：  
 1.北大数院女，拿到MIT EECS PhD，选择了哥大商学院DRO系  
-2.[清华贵系](https://www.zhihu.com/people/yuck-77/answers/by_votes)，nips一作，哥大商学院DRO系
+2.清华贵系，nips一作，哥大商学院DRO系
 - 教职容易（+），placement大部分招教职，因此除了少数雄心壮志的job market candidate较少有去postdoc。僧少粥多的结果。但注意的是近两年的难度极具上升，特别是对于非minority，因此最近不少去了业界，如Amazon。
 - 教职薪资水平高（+）。一般的学校ap可以达到15w-20+w。
 - 毕业年限相对短（+）。一般是5-6年，可能MIS长一点。

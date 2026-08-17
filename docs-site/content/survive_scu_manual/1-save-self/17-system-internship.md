@@ -31,7 +31,7 @@
 题主认为System实习进一步可以分成两类：
 
 - Academic Research：学术Research类的System实习主要位于大厂研究院，包括MSRA、阿里达摩院等，这类System实习主要的目标是做学术方面的研究，最后的产出是学术论文。
-- Engineering Research & Engineering Develop：偏Engineering的System实习主要位于大厂的研究院和工程部（i.e. 有的大厂实验室他是招xxx研究员，这个研究员进来并不是发论文的，而是以一些工程导向的研究为目标的），比如 [Roland](../../00-wiki/external-links.md) 有过经历的腾讯玄武实验室等。这一类实习往往并不仅仅是以出论文为最终目标的（论文一般不是第一目标），主要是做的工程类研究或研发的东西。
+- Engineering Research & Engineering Develop：偏Engineering的System实习主要位于大厂的研究院和工程部（i.e. 有的大厂实验室他是招xxx研究员，这个研究员进来并不是发论文的，而是以一些工程导向的研究为目标的），比如 Roland 有过经历的腾讯玄武实验室等。这一类实习往往并不仅仅是以出论文为最终目标的（论文一般不是第一目标），主要是做的工程类研究或研发的东西。
 
 题主个人建议如果各位SCUer想以后走向System Research的道路，最优的选择应该是先去找Engineering类System实习，然后再去Research类System实习，因为川大课程等对于各位SCUer的coding能力锻炼极其有限，无法写出比较“System”的代码，维护能力差、代码质量差。
 在这种情况下，如果大家一开始就抱着出论文的想法参与Research类System实习，并不一定能活得比较大的收获。而如果先参加Engineering类System实习，能很好提高coding能力以及对System的见解，再去参加Research类System实习才能有比较好的表现。

@@ -1,7 +1,7 @@
 ## 0x00 
 下面介绍人体感应模块 **HC-SR501**。
 
-其中 PDF 版本的详细说明参考 [在这里](https://www.mpja.com/download/31227sc.pdf)， 本文参考于 [arduino](https://lastminuteengineers.com/pir-sensor-arduino-tutorial/)
+本文参考了 [Arduino 社区教程](https://lastminuteengineers.com/pir-sensor-arduino-tutorial/)。
 
 ## 0x01
 ![](../static/HC-SR501/HC-SR501-Motion-Detector-Pin-Outs.png)

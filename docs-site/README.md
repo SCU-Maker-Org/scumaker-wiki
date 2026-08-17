@@ -18,4 +18,5 @@ python3 tools/build_handbook_wiki.py --check-external
 
 如果不需要联网检测外链，可去掉 `--check-external`。
 
+构建会校验所有发布页面、附件和本地链接；发现空内容或缺失目标时会直接失败。
 

@@ -45,34 +45,17 @@ EXTERNAL_REPLACEMENTS = {
     "https://github.com/openwrt/openwrt/archive/v15.05.tar.gz": "https://archive.openwrt.org/chaos_calmer/15.05.1/",
     "https://github.com/openwrt/openwrt/archive/v15.05.zip": "https://archive.openwrt.org/chaos_calmer/15.05.1/",
     "https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php": "https://www.mediawiki.org/wiki/Manual:DefaultSettings.php",
-    "https://sds.cuhk.edu.cn/teacher-search": "https://sds.cuhk.edu.cn/en/teacher",
     "https://stellar.mit.edu/classlink/course6.html": "https://ocw.mit.edu/search/?d=Electrical%20Engineering%20and%20Computer%20Science",
     "https://ysyx.org/": "https://ysyx.oscc.cc/project/intro.html",
-    "http://oqyjccf1n.bkt.clouddn.com/20180408-100752.png": "LOCAL:00-wiki/external-links.md",
-    "http://oqyjccf1n.bkt.clouddn.com/20180408-101436.png": "LOCAL:00-wiki/external-links.md",
-    "http://oqyjccf1n.bkt.clouddn.com/20180408-102205.png": "LOCAL:00-wiki/external-links.md",
-    "http://oqyjccf1n.bkt.clouddn.com/20180408-110132.png": "LOCAL:00-wiki/external-links.md",
-    "http://oqyjccf1n.bkt.clouddn.com/20180408-110156.png": "LOCAL:00-wiki/external-links.md",
-    "http://rolandorange.zone/": "LOCAL:00-wiki/external-links.md",
-    "https://blog.icyfeather.cf/2020/11/07/%e4%b9%b0%e4%ba%86%e4%b8%80%e5%8f%b0%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b9%8b%e5%90%8e%e7%9a%84%e5%9f%ba%e6%93%8d/": "LOCAL:00-wiki/external-links.md",
-    "https://github.com/IcyFeather233/FakeNewsGenerator": "LOCAL:00-wiki/external-links.md",
-}
-
-KNOWN_REACHABLE_URLS = {
-    "https://certbot.eff.org/instructions?ws=other&os=pip",
-    "https://code.visualstudio.com/docs/sourcecontrol/overview",
-    "https://d2l.ai/",
-    "https://docs.gitea.io/en-us/install-with-docker",
-    "https://docs.gitlab.com/ee/administration/operations/fast_ssh_key_lookup.html",
-    "https://docs.gitlab.com/ee/update/background_migrations.html#check-the-status-of-batched-background-migrations",
-    "https://docs.gitlab.com/omnibus/settings/configuration.html#disable-storage-directories-management",
-    "https://en.wikipedia.org/wiki/Dell_DRAC",
-    "https://mypage.cuhk.edu.cn/academics/wangzizhuo/ORFAQ.html",
-    "https://openlearning.mit.edu/courses-programs/open-learning-library",
-    "https://sds.cuhk.edu.cn/en/teacher",
-    "https://www.mediawiki.org/wiki/Manual:DefaultSettings.php",
-    "https://www.mpja.com/download/31227sc.pdf",
-    "https://www.ieltscb.com/paper/list?cid=",
+    "http://oqyjccf1n.bkt.clouddn.com/20180408-100752.png": "REMOVE:missing-image",
+    "http://oqyjccf1n.bkt.clouddn.com/20180408-101436.png": "REMOVE:missing-image",
+    "http://oqyjccf1n.bkt.clouddn.com/20180408-102205.png": "REMOVE:missing-image",
+    "http://oqyjccf1n.bkt.clouddn.com/20180408-110132.png": "REMOVE:missing-image",
+    "http://oqyjccf1n.bkt.clouddn.com/20180408-110156.png": "REMOVE:missing-image",
+    "http://rolandorange.zone/": "REMOVE:unavailable-page",
+    "https://blog.icyfeather.cf/2020/11/07/%e4%b9%b0%e4%ba%86%e4%b8%80%e5%8f%b0%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b9%8b%e5%90%8e%e7%9a%84%e5%9f%ba%e6%93%8d/": "REMOVE:unavailable-page",
+    "https://github.com/IcyFeather233/FakeNewsGenerator": "REMOVE:unavailable-page",
+    "https://www.zhihu.com/people/yuck-77/answers/by_votes": "REMOVE:restricted-profile",
 }
 
 INTERNAL_HOSTS = {
@@ -249,6 +232,11 @@ def iter_markdown_files() -> list[Path]:
     return files
 
 
+def natural_path_key(path: Path) -> str:
+    """Return a stable path key where numbered chapters sort numerically."""
+    return re.sub(r"\d+", lambda match: f"{int(match.group()):08d}", path.as_posix().casefold())
+
+
 def collection_for(path: Path) -> Collection:
     for item in collections():
         try:
@@ -277,6 +265,8 @@ def collect_pages() -> tuple[list[Page], dict[Path, Path]]:
         text = read_text(source)
         title, excerpt, headings, lines, empty = summarize_markdown(source, text, fallback)
         order_index = summary_orders.get(item.root, {}).get(resolved, 9999)
+        if empty:
+            continue
         page = Page(
             path=rel,
             title=title,
@@ -287,7 +277,7 @@ def collect_pages() -> tuple[list[Page], dict[Path, Path]]:
             headings=headings,
             lines=lines,
             bytes=source.stat().st_size,
-            order=(item.order, order_index, len(rel.parts), rel.as_posix()),
+            order=(item.order, order_index, len(rel.parts), natural_path_key(rel)),
             empty=empty,
         )
         pages.append(page)
@@ -404,7 +394,9 @@ def normalize_external_url(url: str) -> tuple[str, str | None]:
         if file_values:
             return unquote(file_values[0]), "浏览器插件链接已替换为直接 PDF URL"
     if url in EXTERNAL_REPLACEMENTS:
-        return EXTERNAL_REPLACEMENTS[url], f"替换旧链接：{url}"
+        replacement = EXTERNAL_REPLACEMENTS[url]
+        action = "移除失效链接" if replacement.startswith("REMOVE:") else "替换旧链接"
+        return replacement, f"{action}：{url}"
     return url, None
 
 
@@ -456,12 +448,13 @@ def resolve_local_target(source: Path, target: str, source_to_dest: dict[Path, P
 
 
 def relative_link(from_path: Path, to_path: Path, suffix: str = "") -> str:
-    return os.path.relpath(to_path.as_posix(), start=from_path.parent.as_posix()).replace("\\", "/") + suffix
+    relative = os.path.relpath(to_path.as_posix(), start=from_path.parent.as_posix()).replace("\\", "/")
+    return relative.replace("(", "%28").replace(")", "%29") + suffix
 
 
 def extract_external_urls(text: str) -> set[str]:
     urls: set[str] = set()
-    for match in re.finditer(r"\]\(([^)\s]+)", text):
+    for match in re.finditer(r"\]\(([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)\)", text):
         target = match.group(1).strip()
         if is_external_url(target):
             normalized, _ = normalize_external_url(target)
@@ -484,14 +477,18 @@ def transform_links(
     local_issues: list[dict[str, str]],
     replacements: list[dict[str, str]],
 ) -> str:
-    link_pattern = re.compile(r"(!?\[[^\]]*\]\()([^)\n]*)(\))")
+    link_pattern = re.compile(r"(!?\[[^\]]*\]\()([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)(\))")
+
+    def plain_label(prefix: str) -> str:
+        match = re.match(r"!?\[([^\]]*)\]\(", prefix)
+        return match.group(1) if match else ""
 
     def replace(match: re.Match[str]) -> str:
         prefix, target, closing = match.groups()
         target = target.strip()
         if not target:
             local_issues.append({"source": str(source.relative_to(ROOT)), "target": target, "reason": "空链接"})
-            return prefix + relative_link(dest, Path("00-wiki/missing-links.md")) + closing
+            return plain_label(prefix)
         base, suffix = split_target(target)
         if not base and suffix:
             return match.group(0)
@@ -500,22 +497,22 @@ def transform_links(
             normalized, note = normalize_external_url(base)
             if note:
                 replacements.append({"source": str(source.relative_to(ROOT)), "old": base, "new": normalized, "note": note})
-            if normalized.startswith("LOCAL:"):
-                return prefix + relative_link(dest, Path(normalized.removeprefix("LOCAL:")), suffix) + closing
+            if normalized.startswith("REMOVE:"):
+                return plain_label(prefix)
             return prefix + normalized + suffix + closing
 
         resolved = resolve_local_target(source, target, source_to_dest)
         if resolved is None:
             if base == "/url/to/file":
-                return prefix + relative_link(dest, Path("00-wiki/resources.md")) + closing
+                return plain_label(prefix)
             local_issues.append({"source": str(source.relative_to(ROOT)), "target": target, "reason": "本地目标不存在"})
-            return match.group(0)
+            return plain_label(prefix)
 
         return prefix + relative_link(dest, resolved, suffix) + closing
 
     transformed = link_pattern.sub(replace, text)
     for old, new in EXTERNAL_REPLACEMENTS.items():
-        if new.startswith("LOCAL:"):
+        if new.startswith("REMOVE:"):
             continue
         transformed = transformed.replace(old, new)
     return transformed
@@ -588,16 +585,14 @@ def resource_category_order(category: str) -> tuple[int, str]:
 
 
 def resource_table(resources: list[Resource], current_page: Path) -> str:
-    lines = ["| 名称 | 类型 | 大小 | 路径 | 说明 |", "| --- | --- | ---: | --- | --- |"]
+    lines = ["| 资源 | 格式 | 大小 |", "| --- | --- | ---: |"]
     for item in resources:
         if item.publish:
             link = relative_link(current_page, item.path)
             name = f"[{item.title}]({link})"
         else:
             name = item.title
-        lines.append(
-            f"| {name} | `{item.ext}` | {size_text(item.size)} | `{item.path.as_posix()}` | {item.note} |"
-        )
+        lines.append(f"| {name} | `{item.ext}` | {size_text(item.size)} |")
     return "\n".join(lines)
 
 
@@ -619,37 +614,24 @@ def generate_resource_pages(resources: list[Resource]) -> dict[Path, str]:
         slug = category_slug(category)
         page = Path(f"00-wiki/resources/{slug}.md")
         overview_lines.append(f"| [{category}](resources/{slug}.md) | {len(items)} | {items[0].note} |")
-        pages[page] = f"# {category}\n\n{resource_table(items, page)}\n"
+        warning = "\n> 这些文件来自历史资料归档。运行安装包或可执行文件前，请自行核验来源和安全性。\n" if category == "软件工具包" else ""
+        pages[page] = f"# {category}\n\n{items[0].note}\n{warning}\n{resource_table(items, page)}\n"
 
     pages[Path("00-wiki/resources.md")] = "\n".join(overview_lines) + "\n"
     return pages
 
 
 def generate_home(pages: list[Page], resources: list[Resource], link_audit: list[dict[str, str]]) -> str:
-    counts: dict[str, int] = {}
-    for page in pages:
-        counts[page.section] = counts.get(page.section, 0) + 1
-    resource_counts: dict[str, int] = {}
-    for item in resources:
-        resource_counts[item.category] = resource_counts.get(item.category, 0) + 1
-
-    section_order = {"站点总览": 0, "协会知识库": 10, "历史参考": 90}
-    page_rows = "\n".join(
-        f"| {section} | {count} |"
-        for section, count in sorted(counts.items(), key=lambda item: (section_order.get(item[0], 50), item[0]))
-    )
-    resource_rows = "\n".join(
-        f"| {category} | {count} |"
-        for category, count in sorted(resource_counts.items(), key=lambda item: resource_category_order(item[0]))
-    )
     checked = len([item for item in link_audit if item.get("checked") == "yes"])
     broken = len([item for item in link_audit if item.get("status") == "broken"])
+    source_pages = len([page for page in pages if page.source is not None and not page.empty])
+    published_resources = len([item for item in resources if item.publish])
 
     return f"""# SCU Maker 文档资料 Wiki
 
-这个站点整理 SCU Maker 协会的介绍、学习路线、技术教程、藏书和资料附件。`SCU 自学手册` 与协会主体关联较弱，已降级为历史参考。
+这里整理 SCU Maker 协会的介绍、学习路线、技术教程、藏书和资料附件。当前收录 **{source_pages} 篇文档**、**{published_resources} 个资源**；`SCU 自学手册` 作为历史参考单独归档。
 
-## 新人入口
+## 从这里开始
 
 - [协会介绍](../awesome_handbook/协会整体介绍.md)
 - [新人学习指南](../learning_guide/README.md)
@@ -657,41 +639,26 @@ def generate_home(pages: list[Page], resources: list[Resource], link_audit: list
 - [编程语言入门](../learning_guide/language/README.md)
 - [Linux 与服务器入门](../learning_guide/server/README.md)
 
-## 协会资料
+## 协会与技术
 
+- [2020 协会招新公告](../awesome_handbook/2020协会招新公告.md)
 - [树莓派 HC-SR501 红外探测教程](../awesome_handbook/software/树莓派的应用之HC-SR501模块.md)
 - [OpenWrt 交叉编译教程](../awesome_handbook/software/openwrt交叉编译教程.md)
+- [协会 Wiki 维护方法](../awesome_handbook/tools/wiki教程.md)
+
+## 资料与归档
+
 - [协会藏书清单](../books/README.md)
 - [资源总库](resources.md)
-
-## 归档与维护
-
 - [SCU 自学手册归档](../survive_scu_manual/README.md)
+
+## 站点维护
+
 - [站点地图](wiki-map.md)
 - [外部链接检测报告](external-links.md)
 - [本地链接报告](missing-links.md)
 
-## 页面规模
-
-| 分区 | 页面数 |
-| --- | ---: |
-{page_rows}
-
-## 资源规模
-
-| 分类 | 文件数 |
-| --- | ---: |
-{resource_rows}
-
-## 链接状态
-
-- 外部链接记录：{len(link_audit)}
-- 已联网检测：{checked}
-- 检测为不可用：{broken}
-
-## 公开部署提醒
-
-站点包含历史附件、软件安装包、内部域名和旧教程链接。默认适合协会内部传承；公开部署前应先做内容审查。
+> 链接记录 {len(link_audit)} 条，已联网检测 {checked} 条，确认不可用并取消跳转 {broken} 条。历史安装包和附件仅供资料留存，使用前请核验来源与安全性。
 """
 
 
@@ -700,7 +667,7 @@ def generate_wiki_map(pages: list[Page]) -> str:
     current_section = ""
     current_collection = ""
     for page in pages:
-        if page.path.as_posix().startswith("00-wiki/"):
+        if page.empty or page.path.as_posix().startswith("00-wiki/"):
             continue
         if page.section != current_section:
             current_section = page.section
@@ -710,8 +677,7 @@ def generate_wiki_map(pages: list[Page]) -> str:
             current_collection = page.collection
             lines.extend([f"### {current_collection}", ""])
         link = relative_link(Path("00-wiki/wiki-map.md"), page.path)
-        empty = "（空/TBD）" if page.empty else ""
-        lines.append(f"- [{page.title}]({link}){empty}")
+        lines.append(f"- [{page.title}]({link})")
     lines.append("")
     return "\n".join(lines)
 
@@ -729,8 +695,8 @@ def generate_missing_links(local_issues: list[dict[str, str]], replacements: lis
         lines.extend(["| 来源 | 原链接 | 新链接 | 说明 |", "| --- | --- | --- | --- |"])
         for item in replacements:
             new_link = item["new"]
-            if new_link.startswith("LOCAL:"):
-                new_link = "[站内外链报告](external-links.md)"
+            if new_link.startswith("REMOVE:"):
+                new_link = "已取消跳转"
             else:
                 new_link = f"`{new_link}`"
             lines.append(f"| `{item['source']}` | `{item['old']}` | {new_link} | {item['note']} |")
@@ -755,6 +721,8 @@ def is_internal_url(url: str) -> bool:
         return False
     host = (parsed.hostname or "").lower()
     if host in INTERNAL_HOSTS:
+        return True
+    if host in {"127.0.0.1", "localhost", "::1"}:
         return True
     if host.startswith("192.168.") or host.startswith("10.") or host.startswith("172.16."):
         return True
@@ -791,15 +759,55 @@ def check_external_urls(urls: set[str]) -> list[dict[str, str]]:
                 break
             except Exception as exc:  # noqa: BLE001
                 note = type(exc).__name__
-                if url in KNOWN_REACHABLE_URLS:
-                    status = "ok"
-                    note = "urllib 检测失败，但已通过独立打开确认可访问"
-                    break
                 if method == "GET":
                     status = "unverified"
                     break
         results.append({"url": url, "status": status, "code": code, "checked": "yes", "note": note, "finalUrl": final_url})
     return results
+
+
+def remove_broken_external_links(
+    pages: list[Page],
+    link_audit: list[dict[str, str]],
+    replacements: list[dict[str, str]],
+) -> None:
+    """Turn confirmed broken external links into text in generated Markdown."""
+    broken = {item["url"] for item in link_audit if item.get("status") == "broken"}
+    if not broken:
+        return
+    link_pattern = re.compile(r"(!?\[[^\]]*\]\()([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)(\))")
+    recorded = {(item["source"], item["old"]) for item in replacements}
+
+    for page in pages:
+        if page.source is None:
+            continue
+        output = CONTENT_DIR / page.path
+        text = read_text(output)
+
+        def replace(match: re.Match[str]) -> str:
+            prefix, target, _ = match.groups()
+            base, _ = split_target(target.strip())
+            normalized, _ = normalize_external_url(base)
+            if normalized not in broken:
+                return match.group(0)
+            label_match = re.match(r"!?\[([^\]]*)\]\(", prefix)
+            label = label_match.group(1) if label_match else ""
+            key = (str(page.source.relative_to(ROOT)), normalized)
+            if key not in recorded:
+                replacements.append(
+                    {
+                        "source": key[0],
+                        "old": normalized,
+                        "new": "REMOVE:external-check",
+                        "note": "联网检测确认目标不可用，已取消跳转",
+                    }
+                )
+                recorded.add(key)
+            return label
+
+        cleaned = link_pattern.sub(replace, text)
+        if cleaned != text:
+            output.write_text(cleaned, encoding="utf-8")
 
 
 def generate_external_report(link_audit: list[dict[str, str]]) -> str:
@@ -819,7 +827,8 @@ def generate_external_report(link_audit: list[dict[str, str]]) -> str:
         final_url = item.get("finalUrl")
         if final_url and final_url != url:
             note = (note + " " if note else "") + f"→ {final_url}"
-        lines.append(f"| {status} | {code} | <{url}> | {note} |")
+        display = f"[打开]({url})" if status == "ok" else f"`{url}`"
+        lines.append(f"| {status} | {code} | {display} | {note} |")
     lines.append("")
     return "\n".join(lines)
 
@@ -873,6 +882,36 @@ def add_generated_pages(
     return merged
 
 
+def navigation_for(page: Page) -> tuple[str, str]:
+    path = page.path.as_posix()
+    parts = page.path.parts
+    if path == "00-wiki/README.md":
+        return "开始使用", "首页"
+    if path.startswith("learning_guide/"):
+        return "开始使用", "新人学习路线"
+    if path.startswith("awesome_handbook/"):
+        if "/software/" in f"/{path}":
+            return "协会资料", "技术教程"
+        if "/tools/" in f"/{path}":
+            return "协会资料", "维护方法"
+        return "协会资料", "协会介绍"
+    if path.startswith("books/"):
+        return "资源库", "图书资料"
+    if path == "00-wiki/resources.md" or path.startswith("00-wiki/resources/"):
+        return "资源库", "分类资源"
+    if path.startswith("survive_scu_manual/"):
+        chapter = parts[1] if len(parts) > 2 else ""
+        labels = {
+            "00-introduction": "手册说明",
+            "1-save-self": "自我提升",
+            "2-survive": "校园生存",
+            "3-future": "升学规划",
+            "4-experience-sharing": "经验分享",
+        }
+        return "历史手册", labels.get(chapter, "归档首页")
+    return "站点维护", "索引与检查"
+
+
 def manifest(pages: list[Page], resources: list[Resource], link_audit: list[dict[str, str]]) -> dict[str, object]:
     return {
         "title": "SCU Maker 文档资料 Wiki",
@@ -900,6 +939,8 @@ def manifest(pages: list[Page], resources: list[Resource], link_audit: list[dict
                 "bytes": page.bytes,
                 "empty": page.empty,
                 "generated": page.generated,
+                "navGroup": navigation_for(page)[0],
+                "navSubgroup": navigation_for(page)[1],
             }
             for page in pages
         ],
@@ -918,37 +959,95 @@ def manifest(pages: list[Page], resources: list[Resource], link_audit: list[dict
     }
 
 
+def validate_site(pages: list[Page], resources: list[Resource]) -> None:
+    """Fail the build when a published page, resource, or local link is empty or missing."""
+    problems: list[str] = []
+    link_pattern = re.compile(r"!?\[[^\]]*\]\(([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)\)")
+
+    for page in pages:
+        output = CONTENT_DIR / page.path
+        if page.empty or not output.is_file() or output.stat().st_size == 0:
+            problems.append(f"空页面：{page.path.as_posix()}")
+            continue
+        text = read_text(output)
+        for match in link_pattern.finditer(text):
+            target = match.group(1).strip()
+            base, _ = split_target(target)
+            if not base or is_external_url(base):
+                continue
+            decoded = unquote(base)
+            if decoded.startswith("/"):
+                relative = Path(decoded.lstrip("/"))
+            else:
+                relative = Path(os.path.normpath((page.path.parent / decoded).as_posix()))
+            if relative.parts and relative.parts[0] == "..":
+                problems.append(f"越界链接：{page.path.as_posix()} -> {target}")
+                continue
+            linked = CONTENT_DIR / relative
+            if not linked.is_file() or linked.stat().st_size == 0:
+                problems.append(f"无内容链接：{page.path.as_posix()} -> {target}")
+
+    for resource in resources:
+        if not resource.publish:
+            continue
+        output = CONTENT_DIR / resource.path
+        if not output.is_file() or output.stat().st_size == 0:
+            problems.append(f"空资源：{resource.path.as_posix()}")
+
+    for shell_file in (SITE_DIR / "index.html", ASSETS_DIR / "wiki.css", ASSETS_DIR / "wiki.js", SITE_DIR / "manifest.json"):
+        if not shell_file.is_file() or shell_file.stat().st_size == 0:
+            problems.append(f"缺少站点文件：{shell_file.relative_to(ROOT)}")
+
+    if problems:
+        details = "\n".join(f"- {problem}" for problem in problems[:30])
+        raise RuntimeError(f"站点完整性检查失败：\n{details}")
+
+
 INDEX_HTML = """<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SCU Maker 文档资料 Wiki</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23173f38'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='21' font-family='Arial' font-weight='700' fill='%23fff7df'%3ESCU%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="assets/wiki.css" />
   </head>
   <body>
     <div class="layout">
-      <aside class="sidebar">
-        <div class="brand">
+      <aside id="sidebar" class="sidebar" aria-label="站点导航">
+        <div class="sidebar-head">
+          <a class="brand" href="#/00-wiki/README.md" aria-label="返回 Wiki 首页">
           <div class="brand-mark">SCU</div>
-          <div>
+            <div class="brand-copy">
             <div class="brand-title">Maker 文档资料 Wiki</div>
             <div class="brand-meta" id="site-stats">加载中</div>
-          </div>
+            </div>
+          </a>
+          <button id="close-menu" class="close-menu" type="button" aria-label="关闭目录">×</button>
         </div>
-        <input id="search" class="search" type="search" placeholder="搜索标题、路径、正文摘要" />
+        <label class="sr-only" for="search">搜索 Wiki</label>
+        <input id="search" class="search" type="search" placeholder="搜索标题和内容摘要" autocomplete="off" />
         <nav id="nav" class="nav"></nav>
+        <div class="sidebar-foot"><a href="#/00-wiki/wiki-map.md">查看完整站点地图</a></div>
       </aside>
+      <button id="backdrop" class="backdrop" type="button" aria-label="关闭目录"></button>
       <main class="main">
         <header class="topbar">
-          <button id="menu" class="menu" type="button" aria-label="打开目录">☰</button>
-          <div id="crumbs" class="crumbs"></div>
-          <a id="raw" class="raw" href="#" target="_blank" rel="noreferrer">Markdown 源文</a>
+          <button id="menu" class="menu" type="button" aria-label="打开目录" aria-controls="sidebar" aria-expanded="false">☰</button>
+          <nav class="crumbs" aria-label="面包屑">
+            <a href="#/00-wiki/README.md">首页</a><span aria-hidden="true">/</span>
+            <span id="crumb-group"></span><span aria-hidden="true">/</span>
+            <span id="crumb-title"></span>
+          </nav>
+          <a id="raw" class="raw" target="_blank" rel="noreferrer" hidden>查看 Markdown</a>
         </header>
-        <article id="content" class="markdown"></article>
+        <div class="content-shell">
+          <article id="content" class="markdown" tabindex="-1"></article>
+          <aside id="toc" class="toc" aria-label="本页目录" hidden></aside>
+        </div>
         <footer class="pager">
-          <a id="prev" href="#"></a>
-          <a id="next" href="#"></a>
+          <a id="prev" hidden></a>
+          <a id="next" hidden></a>
         </footer>
       </main>
     </div>
@@ -960,102 +1059,187 @@ INDEX_HTML = """<!doctype html>
 
 WIKI_CSS = """
 :root {
-  --bg: #f8f7f2;
+  --bg: #f5f7f4;
   --panel: #ffffff;
-  --ink: #202521;
-  --muted: #687069;
-  --line: #dde3dc;
-  --accent: #0f766e;
+  --sidebar: #f9faf7;
+  --ink: #1d2924;
+  --muted: #65716b;
+  --line: #dce4df;
+  --accent: #0b766b;
+  --accent-strong: #07574f;
   --accent-soft: #dcefeb;
-  --warn: #9a5b13;
-  --code: #17211e;
+  --warn: #976018;
+  --code: #17231f;
   --code-text: #e6f0eb;
-  --shadow: 0 18px 45px rgba(26, 35, 31, 0.09);
+  --shadow: 0 16px 44px rgba(29, 41, 36, 0.12);
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
-  letter-spacing: 0;
+  overflow-x: hidden;
 }
-a { color: var(--accent); }
-.layout { display: grid; grid-template-columns: 330px minmax(0, 1fr); min-height: 100vh; }
+a { color: var(--accent); text-underline-offset: 3px; }
+button, input { font: inherit; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); min-height: 100vh; }
 .sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: auto;
+  position: sticky; top: 0; z-index: 10; height: 100vh; overflow: auto;
   border-right: 1px solid var(--line);
-  background: #fbfaf6;
-  padding: 18px 14px;
+  background: var(--sidebar);
+  padding: 20px 14px 16px;
 }
-.brand { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; margin-bottom: 16px; }
+.sidebar-head { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+.brand {
+  min-width: 0; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 11px; align-items: center;
+  color: var(--ink); text-decoration: none;
+}
+.brand-copy { min-width: 0; }
 .brand-mark {
-  width: 48px; height: 48px; border-radius: 8px; display: grid; place-items: center;
-  background: #1f3a34; color: #f8f0d7; font-weight: 850;
+  width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center;
+  background: #173f38; color: #fff7df; font-weight: 850; letter-spacing: .02em;
 }
-.brand-title { font-weight: 780; line-height: 1.22; }
+.brand-title { overflow: hidden; font-weight: 780; line-height: 1.22; text-overflow: ellipsis; white-space: nowrap; }
 .brand-meta { color: var(--muted); font-size: 12px; margin-top: 3px; }
+.close-menu { display: none; border: 0; background: transparent; color: var(--muted); font-size: 27px; line-height: 1; }
 .search {
-  width: 100%; height: 40px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
-  padding: 0 12px; font: inherit; outline: none; margin-bottom: 18px;
+  width: 100%; height: 42px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+  padding: 0 12px; outline: none; margin-bottom: 16px; color: var(--ink);
 }
 .search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12); }
-.nav { display: grid; gap: 14px; }
-.section-title { margin: 0 0 6px; color: #4c564e; font-size: 12px; font-weight: 800; }
-.collection-title { margin: 10px 0 4px; color: var(--muted); font-size: 11px; font-weight: 750; }
-.collection-title:first-child { margin-top: 0; }
-.nav-group { display: grid; gap: 2px; }
-.nav-link {
-  display: block; border-radius: 8px; padding: 8px 9px; color: #26302a; text-decoration: none;
-  line-height: 1.36; overflow-wrap: anywhere;
+.nav { display: grid; gap: 5px; }
+.nav details > summary { list-style: none; cursor: pointer; }
+.nav details > summary::-webkit-details-marker { display: none; }
+.nav-section { border-bottom: 1px solid var(--line); padding: 2px 0 7px; }
+.nav-section:last-child { border-bottom: 0; }
+.section-title {
+  display: flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 8px;
+  border-radius: 8px; color: #405049; font-size: 13px; font-weight: 800;
 }
-.nav-link:hover { background: #eef3ec; }
-.nav-link.active { background: var(--accent-soft); color: #084c45; font-weight: 750; }
-.nav-meta { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; font-weight: 400; }
+.section-title:hover { background: #edf2ee; }
+.section-title::before { content: "›"; color: var(--muted); font-size: 18px; transition: transform 150ms ease; }
+.nav-section[open] > .section-title::before { transform: rotate(90deg); }
+.section-count { margin-left: auto; color: var(--muted); font-size: 11px; font-weight: 600; }
+.nav-subgroup { margin: 1px 0 3px 13px; }
+.collection-title {
+  display: flex; align-items: center; min-height: 30px; padding: 0 8px;
+  color: var(--muted); font-size: 11px; font-weight: 780;
+}
+.collection-title::before { content: "›"; margin-right: 6px; font-size: 15px; transition: transform 150ms ease; }
+.nav-subgroup[open] > .collection-title::before { transform: rotate(90deg); }
+.nav-links { display: grid; gap: 2px; margin: 2px 0 5px; }
+.nav-link {
+  display: block; border-radius: 8px; padding: 7px 9px 7px 22px; color: #2e3d36; text-decoration: none;
+  font-size: 14px; line-height: 1.38; overflow-wrap: anywhere;
+}
+.nav-link:hover { background: #eaf1ed; color: var(--accent-strong); }
+.nav-link.active { background: var(--accent-soft); color: var(--accent-strong); font-weight: 760; }
+.nav-empty { padding: 22px 9px; color: var(--muted); font-size: 13px; text-align: center; }
+.sidebar-foot { padding: 14px 8px 0; border-top: 1px solid var(--line); font-size: 12px; }
+.sidebar-foot a { color: var(--muted); }
 .main { min-width: 0; display: grid; grid-template-rows: auto 1fr auto; }
 .topbar {
-  position: sticky; top: 0; z-index: 2; min-height: 58px; display: flex; align-items: center; gap: 12px;
-  border-bottom: 1px solid var(--line); background: rgba(248,247,242,.92); backdrop-filter: blur(14px);
-  padding: 0 30px;
+  position: sticky; top: 0; z-index: 5; min-width: 0; min-height: 58px; display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid var(--line); background: rgba(245, 247, 244, .94); backdrop-filter: blur(14px);
+  padding: 0 28px;
 }
 .menu {
-  display: none; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
+  display: none; flex: 0 0 auto; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 9px;
+  background: var(--panel); color: var(--ink);
 }
-.crumbs { min-width: 0; color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.raw { margin-left: auto; color: var(--muted); font-size: 13px; text-decoration: none; }
+.crumbs { min-width: 0; display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs span { overflow: hidden; text-overflow: ellipsis; }
+#crumb-group { flex: 0 1 auto; }
+#crumb-title { flex: 0 1 auto; color: #425149; }
+.raw { flex: 0 0 auto; margin-left: auto; color: var(--muted); font-size: 13px; text-decoration: none; }
 .raw:hover { color: var(--accent); }
-.markdown { width: min(100%, 980px); padding: 42px 36px 72px; font-size: 16px; line-height: 1.78; }
-.markdown h1 { margin: 0 0 22px; font-size: 34px; line-height: 1.22; }
-.markdown h2 { margin: 36px 0 12px; padding-top: 26px; border-top: 1px solid var(--line); font-size: 24px; }
-.markdown h3 { margin: 28px 0 10px; font-size: 19px; }
+.content-shell {
+  width: min(100%, 1180px); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 820px) 220px;
+  align-items: start; gap: 54px; padding: 46px 36px 72px;
+}
+.markdown { min-width: 0; font-size: 16px; line-height: 1.78; }
+.markdown:focus { outline: none; }
+.markdown h1 { margin: 0 0 22px; font-size: clamp(30px, 3.1vw, 40px); line-height: 1.2; letter-spacing: -.02em; }
+.markdown h2 { margin: 42px 0 14px; padding-top: 26px; border-top: 1px solid var(--line); font-size: 24px; line-height: 1.35; scroll-margin-top: 78px; }
+.markdown h3 { margin: 30px 0 10px; font-size: 19px; scroll-margin-top: 78px; }
 .markdown p { margin: 12px 0; }
 .markdown ul, .markdown ol { padding-left: 1.5rem; }
 .markdown li { margin: 5px 0; }
-.markdown blockquote { margin: 18px 0; border-left: 4px solid var(--warn); background: #fff7e8; padding: 10px 16px; color: #4b3f2f; }
+.markdown a { overflow-wrap: anywhere; }
+.markdown blockquote { margin: 20px 0; border-left: 4px solid var(--warn); background: #fff7e8; padding: 11px 16px; color: #4b3f2f; }
+.markdown blockquote p:first-child { margin-top: 0; }
+.markdown blockquote p:last-child { margin-bottom: 0; }
 .markdown code { border-radius: 5px; background: #e9efeb; padding: 2px 5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .92em; }
 .markdown pre { overflow: auto; border-radius: 8px; background: var(--code); color: var(--code-text); padding: 16px; box-shadow: var(--shadow); }
 .markdown pre code { background: transparent; color: inherit; padding: 0; }
-.markdown table { display: block; width: 100%; overflow: auto; border-collapse: collapse; margin: 18px 0; }
+.markdown table { display: block; width: 100%; overflow: auto; border-collapse: collapse; margin: 20px 0; }
 .markdown th, .markdown td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
-.markdown th { background: #edf3ee; }
+.markdown th { background: #eaf1ed; text-align: left; }
 .markdown img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); margin: 18px 0; }
 .markdown hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
 .empty-link { color: var(--muted); border-bottom: 1px dotted var(--muted); }
-.pager { width: min(100%, 980px); display: flex; justify-content: space-between; gap: 14px; padding: 0 36px 42px; }
-.pager a { min-height: 44px; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); padding: 0 14px; text-decoration: none; }
-.pager a:empty { visibility: hidden; }
-@media (max-width: 880px) {
+.home-page > p:first-of-type { color: #44544d; font-size: 18px; line-height: 1.75; }
+.home-page h2 + ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0; list-style: none; }
+.home-page h2 + ul li { margin: 0; }
+.home-page h2 + ul a {
+  min-height: 54px; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--panel); padding: 11px 14px; color: var(--ink); text-decoration: none;
+}
+.home-page h2 + ul a:hover { border-color: #9cc8bf; box-shadow: 0 8px 24px rgba(29, 41, 36, .07); color: var(--accent-strong); }
+.resource-page table { display: table; width: 100%; table-layout: fixed; }
+.resource-page th:first-child, .resource-page td:first-child { width: auto; }
+.resource-page th:nth-child(2), .resource-page td:nth-child(2) { width: 100px; }
+.resource-page th:nth-child(3), .resource-page td:nth-child(3) { width: 110px; }
+.toc { position: sticky; top: 82px; max-height: calc(100vh - 110px); overflow: auto; padding-left: 18px; border-left: 1px solid var(--line); }
+.toc-title { margin: 0 0 10px; color: #3c4b44; font-size: 12px; font-weight: 800; }
+.toc-list { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; }
+.toc a { display: block; padding: 5px 7px; border-radius: 6px; color: var(--muted); font-size: 12px; line-height: 1.4; text-decoration: none; }
+.toc a:hover { background: #eaf1ed; color: var(--accent-strong); }
+.toc .toc-h3 a { padding-left: 18px; }
+.pager { width: min(100%, 1180px); display: flex; justify-content: space-between; gap: 14px; margin: 0 auto; padding: 0 36px 44px; }
+.pager a { min-height: 46px; max-width: 48%; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); padding: 8px 14px; text-decoration: none; }
+.pager a:hover { border-color: #9cc8bf; color: var(--accent-strong); }
+.backdrop { display: none; }
+@media (max-width: 1120px) {
+  .content-shell { max-width: 900px; grid-template-columns: minmax(0, 1fr); }
+  .toc { display: none; }
+}
+@media (max-width: 820px) {
   .layout { display: block; }
-  .sidebar { position: fixed; inset: 0 auto 0 0; z-index: 5; width: min(86vw, 350px); transform: translateX(-105%); transition: transform 160ms ease; box-shadow: var(--shadow); }
+  .sidebar { position: fixed; inset: 0 auto 0 0; z-index: 20; width: min(88vw, 330px); transform: translateX(-105%); transition: transform 180ms ease; box-shadow: var(--shadow); }
   body.sidebar-open .sidebar { transform: translateX(0); }
+  body.sidebar-open { overflow: hidden; }
+  .close-menu { display: block; margin-left: auto; }
+  .backdrop { position: fixed; inset: 0; z-index: 15; width: 100%; border: 0; background: rgba(16, 28, 23, .38); opacity: 0; pointer-events: none; transition: opacity 180ms ease; }
+  body.sidebar-open .backdrop { display: block; opacity: 1; pointer-events: auto; }
   .menu { display: block; }
   .topbar { padding: 0 16px; }
-  .markdown { padding: 28px 18px 54px; }
-  .markdown h1 { font-size: 28px; }
+  #crumb-group, .crumbs span:nth-of-type(1) { display: none; }
+  .content-shell { width: 100%; padding: 30px 18px 54px; }
+  .markdown h1 { font-size: 30px; overflow-wrap: anywhere; }
+  .markdown h2 { margin-top: 34px; }
   .pager { padding: 0 18px 32px; flex-direction: column; }
+  .pager a { max-width: none; width: 100%; }
+}
+@media (max-width: 620px) {
+  .raw { display: none; }
+  .home-page > p:first-of-type { font-size: 16px; }
+  .home-page h2 + ul { grid-template-columns: 1fr; }
+  .resource-page table, .resource-page tbody, .resource-page tr, .resource-page td { display: block; width: 100%; }
+  .resource-page thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  .resource-page table { overflow: visible; }
+  .resource-page tr { margin: 11px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); padding: 11px 13px; }
+  .resource-page td { width: 100% !important; border: 0; padding: 3px 0; overflow-wrap: anywhere; }
+  .resource-page td:first-child { padding-bottom: 7px; font-weight: 700; }
+  .resource-page td:nth-child(2), .resource-page td:nth-child(3) { display: inline; color: var(--muted); font-size: 13px; }
+  .resource-page td:nth-child(2)::after { content: " · "; }
 }
 """
 
@@ -1063,6 +1247,7 @@ a { color: var(--accent); }
 WIKI_JS = r"""
 const state = { manifest: null, pages: [], byPath: new Map(), currentPath: "" };
 const externalPattern = /^[a-zA-Z][a-zA-Z0-9+.-]*:/;
+const groupOrder = ["开始使用", "协会资料", "资源库", "历史手册", "站点维护"];
 
 function encodePath(path) {
   return path.split("/").map(encodeURIComponent).join("/");
@@ -1083,12 +1268,22 @@ function normalizePath(path) {
 function resolveRelative(base, target) {
   if (!target || target.startsWith("#") || externalPattern.test(target) || target.startsWith("//")) return target;
   const [pathPart, hashPart] = target.split("#");
-  const normalized = normalizePath(`${dirname(base)}/${decodeURI(pathPart)}`);
+  let decoded = pathPart;
+  try { decoded = decodeURI(pathPart); } catch (_) { /* Keep the original path. */ }
+  const normalized = normalizePath(`${dirname(base)}/${decoded}`);
   return hashPart === undefined ? normalized : `${normalized}#${hashPart}`;
 }
 function contentUrl(path) { return `content/${encodePath(path)}`; }
 function escapeHtml(text) {
-  return String(text).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+  return String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+function unescapeTarget(text) {
+  return text.replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&#39;", "'");
 }
 function slugify(text) {
   return text.trim().toLowerCase().replace(/[^\p{Letter}\p{Number}]+/gu, "-").replace(/^-+|-+$/g, "");
@@ -1096,20 +1291,25 @@ function slugify(text) {
 function renderInline(text, basePath) {
   let rendered = escapeHtml(text);
   rendered = rendered.replace(/`([^`]+)`/g, "<code>$1</code>");
-  rendered = rendered.replace(/!\[([^\]]*)\]\(([^)]*)\)/g, (_, alt, href) => {
-    const cleanHref = href.trim();
+  rendered = rendered.replace(/!\[([^\]]*)\]\(([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)\)/g, (_, alt, href) => {
+    const cleanHref = unescapeTarget(href.trim());
     if (!cleanHref) return "";
     const finalHref = externalPattern.test(cleanHref) || cleanHref.startsWith("//") ? cleanHref : contentUrl(resolveRelative(basePath, cleanHref));
-    return `<img src="${finalHref}" alt="${escapeHtml(alt)}" loading="lazy">`;
+    return `<img src="${escapeHtml(finalHref)}" alt="${alt}" loading="lazy">`;
   });
-  rendered = rendered.replace(/\[([^\]]+)\]\(([^)]*)\)/g, (_, label, href) => {
-    const cleanHref = href.trim();
-    if (!cleanHref) return `<span class="empty-link">${label}</span>`;
-    if (externalPattern.test(cleanHref) || cleanHref.startsWith("//")) return `<a href="${cleanHref}" target="_blank" rel="noreferrer">${label}</a>`;
+  rendered = rendered.replace(/\[([^\]]+)\]\(([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)\)/g, (_, label, href) => {
+    const cleanHref = unescapeTarget(href.trim());
+    if (!cleanHref) return label;
+    if (externalPattern.test(cleanHref) || cleanHref.startsWith("//")) {
+      return `<a href="${escapeHtml(cleanHref)}" target="_blank" rel="noreferrer">${label}</a>`;
+    }
+    if (cleanHref.startsWith("#")) {
+      return `<a href="#/${escapeHtml(basePath)}${escapeHtml(cleanHref)}">${label}</a>`;
+    }
     const resolved = resolveRelative(basePath, cleanHref);
     const pagePath = resolved.split("#")[0];
-    if (state.byPath.has(pagePath)) return `<a href="#/${resolved}">${label}</a>`;
-    return `<a href="${contentUrl(resolved)}" target="_blank" rel="noreferrer">${label}</a>`;
+    if (state.byPath.has(pagePath)) return `<a href="#/${escapeHtml(resolved)}">${label}</a>`;
+    return `<a href="${escapeHtml(contentUrl(resolved))}" target="_blank" rel="noreferrer">${label}</a>`;
   });
   rendered = rendered.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   rendered = rendered.replace(/\*([^*]+)\*/g, "<em>$1</em>");
@@ -1125,6 +1325,7 @@ function markdownToHtml(markdown, basePath) {
   const lines = markdown.replace(/\r\n?/g, "\n").split("\n");
   const html = [];
   let i = 0, inCode = false, codeLines = [], codeLang = "", listType = null;
+  const headingIds = new Map();
   function closeList() { if (listType) { html.push(`</${listType}>`); listType = null; } }
   while (i < lines.length) {
     const line = lines[i], trimmed = line.trim();
@@ -1141,7 +1342,10 @@ function markdownToHtml(markdown, basePath) {
     const heading = trimmed.match(/^(#{1,6})\s+(.+)$/);
     if (heading) {
       closeList();
-      const level = Math.min(6, heading[1].length), id = slugify(heading[2]);
+      const level = Math.min(6, heading[1].length), baseId = slugify(heading[2]) || `section-${i + 1}`;
+      const count = (headingIds.get(baseId) || 0) + 1;
+      headingIds.set(baseId, count);
+      const id = count === 1 ? baseId : `${baseId}-${count}`;
       html.push(`<h${level} id="${id}">${renderInline(heading[2], basePath)}</h${level}>`);
       i += 1; continue;
     }
@@ -1185,36 +1389,77 @@ function markdownToHtml(markdown, basePath) {
 function renderSidebar(filter = "") {
   const nav = document.getElementById("nav");
   const query = filter.trim().toLowerCase();
-  const pages = query ? state.pages.filter((page) => [page.title, page.section, page.collection, page.source, page.excerpt, ...(page.headings || [])].join(" ").toLowerCase().includes(query)) : state.pages;
+  const pages = query
+    ? state.pages.filter((page) => [page.title, page.navGroup, page.navSubgroup, page.source, page.excerpt, ...(page.headings || [])].join(" ").toLowerCase().includes(query))
+    : state.pages;
   const groups = new Map();
   pages.forEach((page) => {
-    if (!groups.has(page.section)) groups.set(page.section, new Map());
-    const collections = groups.get(page.section);
-    if (!collections.has(page.collection)) collections.set(page.collection, []);
-    collections.get(page.collection).push(page);
+    if (!groups.has(page.navGroup)) groups.set(page.navGroup, new Map());
+    const subgroups = groups.get(page.navGroup);
+    if (!subgroups.has(page.navSubgroup)) subgroups.set(page.navSubgroup, []);
+    subgroups.get(page.navSubgroup).push(page);
   });
+  if (!pages.length) {
+    nav.innerHTML = '<div class="nav-empty">没有匹配的页面</div>';
+    return;
+  }
+  const current = state.byPath.get(state.currentPath);
   const fragments = [];
-  groups.forEach((collections, section) => {
-    fragments.push(`<section><h2 class="section-title">${escapeHtml(section)}</h2>`);
-    collections.forEach((items, collection) => {
-      fragments.push(`<div class="nav-group"><h3 class="collection-title">${escapeHtml(collection)}</h3>`);
+  [...groups.entries()]
+    .sort(([a], [b]) => groupOrder.indexOf(a) - groupOrder.indexOf(b))
+    .forEach(([group, subgroups]) => {
+      const count = [...subgroups.values()].reduce((total, items) => total + items.length, 0);
+      const groupOpen = Boolean(query) || current?.navGroup === group;
+      fragments.push(`<details class="nav-section"${groupOpen ? " open" : ""}><summary class="section-title">${escapeHtml(group)}<span class="section-count">${count}</span></summary>`);
+      subgroups.forEach((items, subgroup) => {
+        const subgroupOpen = Boolean(query) || items.some((page) => page.path === state.currentPath);
+        fragments.push(`<details class="nav-subgroup"${subgroupOpen ? " open" : ""}><summary class="collection-title">${escapeHtml(subgroup)}</summary><div class="nav-links">`);
       items.forEach((page) => {
         const active = page.path === state.currentPath ? " active" : "";
-        const empty = page.empty ? "空/TBD" : "";
-        const meta = empty ? `<span class="nav-meta">${empty}</span>` : "";
-        fragments.push(`<a class="nav-link${active}" href="#/${page.path}">${escapeHtml(page.title)}${meta}</a>`);
+          fragments.push(`<a class="nav-link${active}" href="#/${escapeHtml(page.path)}">${escapeHtml(page.title)}</a>`);
       });
-      fragments.push("</div>");
+        fragments.push("</div></details>");
     });
-    fragments.push("</section>");
+      fragments.push("</details>");
   });
   nav.innerHTML = fragments.join("");
 }
 function pageFromHash() {
-  const raw = decodeURI(location.hash.replace(/^#\/?/, ""));
+  let raw = location.hash.replace(/^#\/?/, "");
+  try { raw = decodeURI(raw); } catch (_) { raw = ""; }
   const path = raw.split("#")[0];
   if (path && state.byPath.has(path)) return raw;
   return "00-wiki/README.md";
+}
+function renderToc(page) {
+  const toc = document.getElementById("toc");
+  const headings = [...document.querySelectorAll("#content h2, #content h3")];
+  if (!headings.length) {
+    toc.hidden = true;
+    toc.innerHTML = "";
+    return;
+  }
+  const links = headings.map((heading) => {
+    const level = heading.tagName === "H3" ? "toc-h3" : "toc-h2";
+    return `<li class="${level}"><a href="#/${escapeHtml(page.path)}#${escapeHtml(heading.id)}">${escapeHtml(heading.textContent)}</a></li>`;
+  });
+  toc.innerHTML = `<div class="toc-title">本页目录</div><ol class="toc-list">${links.join("")}</ol>`;
+  toc.hidden = false;
+}
+function setPagerLink(element, page, direction) {
+  if (!page) {
+    element.hidden = true;
+    element.removeAttribute("href");
+    element.textContent = "";
+    return;
+  }
+  element.hidden = false;
+  element.href = `#/${page.path}`;
+  element.textContent = direction === "prev" ? `← ${page.title}` : `${page.title} →`;
+}
+function setSidebar(open) {
+  document.body.classList.toggle("sidebar-open", open);
+  document.getElementById("menu").setAttribute("aria-expanded", String(open));
 }
 async function loadPage(pathWithHash) {
   const [path, anchor] = pathWithHash.split("#");
@@ -1222,42 +1467,60 @@ async function loadPage(pathWithHash) {
   state.currentPath = page.path;
   renderSidebar(document.getElementById("search").value);
   const response = await fetch(contentUrl(page.path));
-  const markdown = response.ok ? await response.text() : `# 无法读取页面\n\n${page.path}`;
-  document.getElementById("content").innerHTML = markdownToHtml(markdown, page.path);
+  if (!response.ok) throw new Error(`无法读取页面：${page.path}`);
+  const markdown = await response.text();
+  const content = document.getElementById("content");
+  content.className = "markdown";
+  if (page.path === "00-wiki/README.md") content.classList.add("home-page");
+  if (page.path === "00-wiki/resources.md" || page.path.startsWith("00-wiki/resources/")) content.classList.add("resource-page");
+  content.innerHTML = markdownToHtml(markdown, page.path);
+  renderToc(page);
   document.title = `${page.title} · SCU Maker 文档资料 Wiki`;
-  document.getElementById("crumbs").textContent = `${page.section} / ${page.collection} / ${page.title}`;
+  document.getElementById("crumb-group").textContent = page.navGroup;
+  document.getElementById("crumb-title").textContent = page.title;
   const raw = document.getElementById("raw");
-  raw.href = contentUrl(page.path);
-  raw.textContent = page.source === "generated" ? "生成页面" : "Markdown 源文";
-  raw.title = page.source;
-  const index = state.pages.findIndex((item) => item.path === page.path);
-  const prev = state.pages[index - 1], next = state.pages[index + 1];
-  document.getElementById("prev").textContent = prev ? `← ${prev.title}` : "";
-  document.getElementById("prev").href = prev ? `#/${prev.path}` : "#";
-  document.getElementById("next").textContent = next ? `${next.title} →` : "";
-  document.getElementById("next").href = next ? `#/${next.path}` : "#";
-  document.body.classList.remove("sidebar-open");
+  if (page.source === "generated") {
+    raw.hidden = true;
+    raw.removeAttribute("href");
+  } else {
+    raw.hidden = false;
+    raw.href = contentUrl(page.path);
+    raw.title = page.source;
+  }
+  const siblings = state.pages.filter((item) => item.navGroup === page.navGroup);
+  const index = siblings.findIndex((item) => item.path === page.path);
+  setPagerLink(document.getElementById("prev"), siblings[index - 1], "prev");
+  setPagerLink(document.getElementById("next"), siblings[index + 1], "next");
+  setSidebar(false);
   if (anchor) {
-    const target = document.getElementById(anchor);
-    if (target) target.scrollIntoView();
+    requestAnimationFrame(() => document.getElementById(anchor)?.scrollIntoView());
   } else {
     window.scrollTo({ top: 0 });
   }
 }
 async function init() {
   const response = await fetch("manifest.json");
+  if (!response.ok) throw new Error("无法读取站点清单");
   state.manifest = await response.json();
-  state.pages = state.manifest.pages;
+  state.pages = state.manifest.pages.filter((page) => !page.empty);
   state.pages.forEach((page) => state.byPath.set(page.path, page));
   document.getElementById("site-stats").textContent = `${state.manifest.stats.pages} 页 · ${state.manifest.stats.publishedResources} 个资源`;
   document.getElementById("search").addEventListener("input", (event) => renderSidebar(event.target.value));
-  document.getElementById("menu").addEventListener("click", () => document.body.classList.toggle("sidebar-open"));
+  document.getElementById("menu").addEventListener("click", () => setSidebar(true));
+  document.getElementById("close-menu").addEventListener("click", () => setSidebar(false));
+  document.getElementById("backdrop").addEventListener("click", () => setSidebar(false));
+  document.getElementById("nav").addEventListener("click", (event) => {
+    if (event.target.closest("a")) setSidebar(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setSidebar(false);
+  });
   window.addEventListener("hashchange", () => loadPage(pageFromHash()));
   renderSidebar();
   await loadPage(pageFromHash());
 }
 init().catch((error) => {
-  document.getElementById("content").innerHTML = `<h1>加载失败</h1><pre>${escapeHtml(error.stack || error.message)}</pre>`;
+  document.getElementById("content").innerHTML = `<h1>页面加载失败</h1><p>${escapeHtml(error.message)}</p>`;
 });
 """
 
@@ -1282,6 +1545,7 @@ python3 tools/build_handbook_wiki.py --check-external
 
 如果不需要联网检测外链，可去掉 `--check-external`。
 
+构建会校验所有发布页面、附件和本地链接；发现空内容或缺失目标时会直接失败。
 
 """
 
@@ -1310,13 +1574,16 @@ def main() -> None:
         {"url": url, "status": "unchecked", "code": "", "checked": "no", "note": "本次构建未启用 --check-external"}
         for url in sorted(external_urls)
     ]
+    remove_broken_external_links(pages, link_audit, replacements)
     pages = add_generated_pages(pages, resources, local_issues, replacements, link_audit)
     site_manifest = manifest(pages, resources, link_audit)
     write_static_shell(site_manifest, link_audit)
+    validate_site(pages, resources)
 
     print(f"Generated {site_manifest['stats']['pages']} wiki pages in {SITE_DIR.relative_to(ROOT)}")
     print(f"Published {site_manifest['stats']['publishedResources']} resources from {DOCS_ROOT.relative_to(ROOT)}")
     print(f"External links: {site_manifest['stats']['externalLinks']}, broken: {site_manifest['stats']['brokenExternalLinks']}")
+    print("Validated all published pages, resources, and local links")
 
 
 if __name__ == "__main__":

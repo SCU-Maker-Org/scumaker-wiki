@@ -7,7 +7,7 @@
 
 ### 协会介绍与技术教程
 
-- [2020协会招新公告](../awesome_handbook/2020协会招新公告.md)
+- [2020 协会招新公告](../awesome_handbook/2020协会招新公告.md)
 - [SCU Maker 协会介绍](../awesome_handbook/协会整体介绍.md)
 - [OpenWrt系统交叉编译教程](../awesome_handbook/software/openwrt交叉编译教程.md)
 - [树莓派的应用之HC-SR501红外探测模块](../awesome_handbook/software/树莓派的应用之HC-SR501模块.md)
@@ -29,6 +29,10 @@
 - [SCU 自学手册归档](../survive_scu_manual/README.md)
 - [序](../survive_scu_manual/00-introduction/introduction.md)
 - [为什么是计软网](../survive_scu_manual/1-save-self/1-why-JRW.md)
+- [我们要学会什么？](../survive_scu_manual/1-save-self/2-what-to-learn.md)
+- [计算机包括哪些方向？如何选择这些方向？](../survive_scu_manual/1-save-self/3-fields.md)
+- [重要的基础课](../survive_scu_manual/1-save-self/4-important-basics.md)
+- [什么是科研](../survive_scu_manual/1-save-self/8-what-is-research.md)
 - [关于摆脱内卷和焦虑的一些浅见](../survive_scu_manual/1-save-self/11-cope-with-anxiety.md)
 - [如何提高自己的代码/工程能力](../survive_scu_manual/1-save-self/12-improve-coding.md)
 - [转计软网二三事](../survive_scu_manual/1-save-self/14-transfer-major.md)
@@ -36,10 +40,6 @@
 - [System类实习经验指北](../survive_scu_manual/1-save-self/17-system-internship.md)
 - [MIT OCW 与公开课自学](../survive_scu_manual/1-save-self/18-deep-dive-to-ocw.md)
 - [给非科班同学的一些建议](../survive_scu_manual/1-save-self/19-if-not-cs.md)
-- [我们要学会什么？](../survive_scu_manual/1-save-self/2-what-to-learn.md)
-- [计算机包括哪些方向？如何选择这些方向？](../survive_scu_manual/1-save-self/3-fields.md)
-- [重要的基础课](../survive_scu_manual/1-save-self/4-important-basics.md)
-- [什么是科研](../survive_scu_manual/1-save-self/8-what-is-research.md)
 - [绩点到底有没有用](../survive_scu_manual/2-survive/1-GPA.md)
 - [双学位（辅修、第二学位、2+2合作）的区别](../survive_scu_manual/2-survive/6-double-degree.md)
 - [出国读PhD如何规划](../survive_scu_manual/3-future/1-1-abroad-PhD.md)

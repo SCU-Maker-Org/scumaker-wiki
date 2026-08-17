@@ -29,6 +29,8 @@ python3 tools/build_handbook_wiki.py
 python3 tools/build_handbook_wiki.py --check-external
 ```
 
+构建会校验所有发布页面、附件和本地链接；发现空内容或缺失目标时会直接失败。联网检测确认失效的外链会在生成站点中取消跳转。
+
 ## 维护原则
 
 - 优先维护 `projects/docs-and-handbooks/` 下的源文档，不要只改 `docs-site/`。

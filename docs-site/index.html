@@ -4,31 +4,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SCU Maker 文档资料 Wiki</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23173f38'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='21' font-family='Arial' font-weight='700' fill='%23fff7df'%3ESCU%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="assets/wiki.css" />
   </head>
   <body>
     <div class="layout">
-      <aside class="sidebar">
-        <div class="brand">
+      <aside id="sidebar" class="sidebar" aria-label="站点导航">
+        <div class="sidebar-head">
+          <a class="brand" href="#/00-wiki/README.md" aria-label="返回 Wiki 首页">
           <div class="brand-mark">SCU</div>
-          <div>
+            <div class="brand-copy">
             <div class="brand-title">Maker 文档资料 Wiki</div>
             <div class="brand-meta" id="site-stats">加载中</div>
-          </div>
+            </div>
+          </a>
+          <button id="close-menu" class="close-menu" type="button" aria-label="关闭目录">×</button>
         </div>
-        <input id="search" class="search" type="search" placeholder="搜索标题、路径、正文摘要" />
+        <label class="sr-only" for="search">搜索 Wiki</label>
+        <input id="search" class="search" type="search" placeholder="搜索标题和内容摘要" autocomplete="off" />
         <nav id="nav" class="nav"></nav>
+        <div class="sidebar-foot"><a href="#/00-wiki/wiki-map.md">查看完整站点地图</a></div>
       </aside>
+      <button id="backdrop" class="backdrop" type="button" aria-label="关闭目录"></button>
       <main class="main">
         <header class="topbar">
-          <button id="menu" class="menu" type="button" aria-label="打开目录">☰</button>
-          <div id="crumbs" class="crumbs"></div>
-          <a id="raw" class="raw" href="#" target="_blank" rel="noreferrer">Markdown 源文</a>
+          <button id="menu" class="menu" type="button" aria-label="打开目录" aria-controls="sidebar" aria-expanded="false">☰</button>
+          <nav class="crumbs" aria-label="面包屑">
+            <a href="#/00-wiki/README.md">首页</a><span aria-hidden="true">/</span>
+            <span id="crumb-group"></span><span aria-hidden="true">/</span>
+            <span id="crumb-title"></span>
+          </nav>
+          <a id="raw" class="raw" target="_blank" rel="noreferrer" hidden>查看 Markdown</a>
         </header>
-        <article id="content" class="markdown"></article>
+        <div class="content-shell">
+          <article id="content" class="markdown" tabindex="-1"></article>
+          <aside id="toc" class="toc" aria-label="本页目录" hidden></aside>
+        </div>
         <footer class="pager">
-          <a id="prev" href="#"></a>
-          <a id="next" href="#"></a>
+          <a id="prev" hidden></a>
+          <a id="next" hidden></a>
         </footer>
       </main>
     </div>
